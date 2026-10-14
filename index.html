@@ -14,44 +14,57 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c121d;--card:#162033;--text:#e8ecf5;--muted:#93a0b8;--line:#26334d;--h:#e0c27a}}
 :root[data-theme="dark"]{--bg:#0c121d;--card:#162033;--text:#e8ecf5;--muted:#93a0b8;--line:#26334d;--h:#e0c27a}
 *{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Tahoma,Roboto,system-ui,sans-serif}
-body{background:var(--bg);color:var(--text);padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
-header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 14px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
-.logo{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font:800 18px Georgia,serif;flex:none}
+body{background:var(--bg);color:var(--text);padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 12px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:5}
+.logo{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font:800 17px Georgia,serif;flex:none}
 .logo.big{width:84px;height:84px;font-size:32px}
-header b{display:block;font:700 16px Georgia,serif;direction:ltr}
-header small{color:#e0c98f;font-size:12px}
-.gear{margin-inline-start:auto;background:rgba(255,255,255,.12);color:#fff;font-size:20px;width:42px;height:42px;padding:0;border-radius:50%}
-main{padding:14px;max-width:760px;margin:auto;zoom:var(--z)}
+header b{display:block;font:700 15px Georgia,serif;direction:ltr}header small{color:#e0c98f;font-size:12px}
+.hb{background:rgba(255,255,255,.12);color:#fff;font-size:18px;min-width:40px;height:40px;padding:0 8px;border-radius:12px}.hb.sp{margin-inline-start:auto}
+main{padding:14px;max-width:900px;margin:auto;zoom:var(--z)}
 .card{background:var(--card);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:0 2px 10px rgba(15,39,71,.08)}
 h2{font-size:16px;margin-bottom:10px;color:var(--h)}h2.sec{margin:16px 2px 10px}
 p.m{color:var(--muted);font-size:13px;margin-bottom:8px;line-height:1.7}
 input,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--text);font-size:14px;margin-bottom:8px}
 input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
-.row{display:flex;gap:8px;flex-wrap:wrap}.row>button{flex:1}.ln{display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1;min-width:120px}
+.ln{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:6px}.ln button{margin-bottom:8px;padding:0 10px}
 button{font-size:14px;cursor:pointer;border:none;border-radius:10px;padding:11px 14px}
 .primary{width:100%;background:var(--navy);color:#fff;font-weight:700;margin-top:8px}
 .gold{background:var(--gold);color:var(--navy);font-weight:700}
 .ghost{background:transparent;border:1px dashed var(--gold);color:var(--h);width:100%;margin-bottom:8px}
-.x{background:transparent;color:var(--bad);padding:2px 8px;font-size:12px}
-.seg{display:flex;gap:6px;margin-bottom:12px}.seg button{flex:1;background:var(--card);color:var(--text);font-size:12px;padding:9px 4px}.seg .on{background:var(--navy);color:#fff}
+.x{background:transparent;color:var(--bad);padding:4px 8px;font-size:12px}.lnk{background:transparent;color:var(--h);padding:4px 8px;font-size:12px;text-decoration:underline}
+.seg{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}.seg button{flex:1;background:var(--card);color:var(--text);font-size:12px;padding:9px 6px;white-space:nowrap}.seg .on{background:var(--navy);color:#fff}
+.sc{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:start}
 td:not(:first-child),th:not(:first-child){text-align:right;direction:ltr;font-variant-numeric:tabular-nums;white-space:nowrap}
 [dir=rtl] td:not(:first-child),[dir=rtl] th:not(:first-child){text-align:left}
 tr.t td{font-weight:700;border-top:2px solid var(--line)}tr.g td{background:rgba(201,162,75,.18);font-weight:800}
 .tot{font-size:13px;margin:6px 0}.ok{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.err{color:var(--bad);font-size:13px;min-height:18px}
-.eh{display:flex;align-items:center;gap:8px;margin-bottom:4px}.eh .x{margin-inline-start:auto}
+.eh{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}.eh .sp{margin-inline-start:auto}
 .tag{background:rgba(201,162,75,.25);color:var(--h);font-size:11px;padding:2px 8px;border-radius:20px}
 .st,.set{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
 .set select,.set .ti{width:52%;margin:0}.set input[type=checkbox]{width:22px;height:22px;margin:0}.set input[type=range]{width:52%;margin:0;padding:0}
-nav{position:fixed;bottom:0;inset-inline:0;display:flex;background:var(--navy);padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
-nav button{flex:1;background:transparent;color:#b9c4d8;font-size:11px;padding:8px 2px;border-radius:0}nav i{display:block;font-style:normal;font-size:19px}nav .on{color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.kpi{background:var(--card);border-radius:14px;padding:12px;box-shadow:0 2px 10px rgba(15,39,71,.08);border-inline-start:4px solid var(--gold)}
+.kpi small{color:var(--muted);font-size:12px}.kpi b{display:block;font-size:17px;margin-top:4px;direction:ltr;text-align:start}
+.bar{height:10px;border-radius:10px;background:var(--line);overflow:hidden}.bar i{display:block;height:100%;background:var(--gold)}
+.lg{font-size:12px;color:var(--muted);display:flex;gap:14px;margin-top:6px}.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:4px}
+#side{position:fixed;top:0;bottom:0;inset-inline-start:0;width:250px;background:var(--navy);color:#fff;z-index:30;transform:translateX(-100%);transition:transform .25s;padding:calc(14px + env(safe-area-inset-top,0px)) 0 14px;overflow:auto}
+[dir=rtl] #side{transform:translateX(100%)}body.menu #side{transform:none}
+#ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:25}body.menu #ov{display:block}
+#side .br{display:flex;align-items:center;gap:10px;padding:4px 16px 16px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:8px}
+#side .br b{font:700 14px Georgia,serif;direction:ltr}
+#side button{display:flex;align-items:center;gap:12px;width:100%;background:transparent;color:#c6d0e3;text-align:start;border-radius:0;padding:13px 18px;font-size:14px}
+#side button.on{background:rgba(201,162,75,.18);color:var(--gold);font-weight:700}
+@media(min-width:900px){#side{transform:none!important}.burger{display:none}body{padding-inline-start:250px}#ov{display:none!important}}
 footer{text-align:center;color:var(--muted);font-size:12px;padding:8px}
 #lock{position:fixed;inset:0;z-index:50;background:linear-gradient(160deg,var(--navy),#08162b);color:#fff;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center}
 #lock h1{font:700 22px Georgia,serif}#lock p{color:#c6d0e3}#lock input{max-width:280px;text-align:center}#lock .primary{max-width:280px;background:var(--gold);color:var(--navy)}
+.warn{background:#fdecea;color:#8a1f12;border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px}
 .wm{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:4;color:var(--gold);opacity:var(--wmo)}
 .wm svg{width:min(92vw,600px);height:auto;transform:rotate(-8deg)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-@media print{header,nav,button,.seg,#lock{display:none!important}body{padding:0}.card{box-shadow:none}}
+@media print{header,#side,#ov,button,.seg,#lock,.noprint,footer{display:none!important}body{padding:0!important}.card{box-shadow:none}main{zoom:1}}
 </style>
 </head>
 <body>
@@ -75,159 +88,635 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:8px}
 <path d="M232 266H282M318 266H368" stroke="currentColor" stroke-width="1.5"/><use href="#dm" x="300" y="266"/>
 <text x="300" y="290" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="12" letter-spacing="3.5" fill="currentColor" text-anchor="middle">ACCOUNTING CYCLE</text>
 </svg></div>
-<header><div class="logo">AM</div><div><b>Abdelazeem Mandour</b><small id="sub"></small></div><button class="gear" onclick="go('settings')" aria-label="Settings">⚙️</button></header>
+<div id="ov" onclick="document.body.classList.remove('menu')"></div>
+<aside id="side"></aside>
+<header><button class="hb burger" onclick="document.body.classList.toggle('menu')" aria-label="Menu">☰</button><div class="logo">AM</div><div><b>Abdelazeem Mandour</b><small id="sub"></small></div><button class="hb sp" id="lb" onclick="setS('lang',ST.lang==='ar'?'en':'ar')" aria-label="Language"></button></header>
 <main id="app"></main>
 <footer>© Abdelazeem Mandour</footer>
-<nav id="nav"></nav>
 <script>
-const KEY='am_accounting_v1';
-const DEF=[['1101','Cash','الصندوق','asset'],['1102','Bank','البنك','asset'],['1103','Accounts Receivable','العملاء','asset'],['1104','Inventory','المخزون','asset'],['1201','Equipment','المعدات','asset'],['1202','Accumulated Depreciation','مجمع إهلاك المعدات','asset'],['2101','Accounts Payable','الموردون','liability'],['2102','Accrued Expenses','مصروفات مستحقة','liability'],['2103','Loans','قروض','liability'],['3101','Owner\'s Capital','رأس المال','equity'],['3102','Owner\'s Drawings','المسحوبات','equity'],['4101','Sales Revenue','إيرادات المبيعات','revenue'],['4102','Service Revenue','إيرادات خدمات','revenue'],['5101','Cost of Goods Sold','تكلفة البضاعة المباعة','expense'],['5102','Salaries Expense','الرواتب','expense'],['5103','Rent Expense','الإيجار','expense'],['5104','Depreciation Expense','مصروف الإهلاك','expense'],['5105','Miscellaneous Expense','مصروفات متنوعة','expense']];
+'use strict';
+/*
+ * Accounting engine - pure logic, no UI, no storage.
+ * Works in Node and in the browser (<script> exposes window.AccountingEngine).
+ * Money is stored as INTEGER minor units (e.g. cents) - never floats.
+ */
+(function (root) {
+  class AccountingError extends Error {
+    constructor(code, message, details) { super(message || code); this.name = 'AccountingError'; this.code = code; this.details = details; }
+  }
+  const E = (c, m, d) => new AccountingError(c, m, d);
+  const clone = (o) => JSON.parse(JSON.stringify(o));
+
+  const TYPES = ['asset', 'liability', 'equity', 'revenue', 'expense'];
+  const NORMAL = { asset: 'debit', expense: 'debit', liability: 'credit', equity: 'credit', revenue: 'credit' };
+  const KINDS = ['regular', 'adjusting', 'closing', 'opening'];
+  const PREFIX = { regular: 'JV', adjusting: 'AJ', closing: 'CL', opening: 'OB' };
+  const STAGES = {
+    unadjusted: ['regular', 'opening'],
+    adjusted: ['regular', 'opening', 'adjusting'],
+    postClosing: ['regular', 'opening', 'adjusting', 'closing'],
+  };
+  const ROLES = {
+    admin: ['*'],
+    accountant: ['account.manage', 'entry.create', 'entry.post', 'entry.reverse', 'year.close'],
+    approver: ['entry.approve', 'entry.post'],
+    viewer: [],
+  };
+
+  /* ---------- money ---------- */
+  function toMinor(v, dec) {
+    const s0 = typeof v === 'number' ? String(v) : String(v).trim();
+    if (!/^-?\d+(\.\d+)?$/.test(s0)) throw E('BAD_AMOUNT', 'Invalid amount: ' + v);
+    const neg = s0[0] === '-';
+    const s = neg ? s0.slice(1) : s0;
+    let [i, f = ''] = s.split('.');
+    if (f.length > dec) {
+      if (/[^0]/.test(f.slice(dec))) throw E('TOO_MANY_DECIMALS', `Amount ${v} has more than ${dec} decimals`);
+      f = f.slice(0, dec);
+    }
+    const n = Number(i + f.padEnd(dec, '0'));
+    if (!Number.isSafeInteger(n)) throw E('AMOUNT_TOO_LARGE', 'Amount too large');
+    return neg ? -n : n;
+  }
+  function fmtMinor(n, dec) {
+    const neg = n < 0; n = Math.abs(n);
+    const s = String(n).padStart(dec + 1, '0');
+    const i = s.slice(0, s.length - dec), f = s.slice(s.length - dec);
+    return (neg ? '-' : '') + (dec ? i + '.' + f : i);
+  }
+  function okDate(d) {
+    if (typeof d !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return false;
+    const t = new Date(d + 'T00:00:00Z');
+    return !isNaN(t) && t.toISOString().slice(0, 10) === d;
+  }
+  function hash(str) { // cyrb53 - tamper EVIDENCE only, not cryptographic security
+    let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+    for (let i = 0; i < str.length; i++) { const c = str.charCodeAt(i); h1 = Math.imul(h1 ^ c, 2654435761); h2 = Math.imul(h2 ^ c, 1597334677); }
+    h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+    return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16);
+  }
+
+  class Ledger {
+    constructor(opts = {}) {
+      const { company = 'Company', decimals = 2, requireApproval = false, retainedEarnings = '3200', now } = opts;
+      this.now = now || (() => new Date().toISOString());
+      this.s = { company, dec: decimals, requireApproval, retainedEarnings, accounts: {}, entries: [], periods: {}, years: {}, seq: {}, bal: {}, audit: [], nextId: 1 };
+    }
+    m(v) { return toMinor(v, this.s.dec); }
+    f(n) { return fmtMinor(n, this.s.dec); }
+
+    /* ---------- internals ---------- */
+    _can(user, action) {
+      const p = ROLES[(user && user.role) || ''] || [];
+      if (!(p.includes('*') || p.includes(action))) throw E('FORBIDDEN', `${user && user.id} is not allowed: ${action}`);
+    }
+    _log(user, action, ref, data = {}) {
+      const a = this.s.audit, prev = a.length ? a[a.length - 1].hash : 'GENESIS';
+      const rec = { seq: a.length + 1, ts: this.now(), user: user.id, action, ref, data, prev };
+      rec.hash = hash(prev + JSON.stringify([rec.seq, rec.ts, rec.user, rec.action, rec.ref, rec.data]));
+      a.push(rec);
+    }
+    _tx(fn) { // all-or-nothing
+      const snap = JSON.stringify(this.s);
+      try { return fn(); } catch (e) { this.s = JSON.parse(snap); throw e; }
+    }
+    _entry(id) { const e = this.s.entries.find((x) => x.id === id); if (!e) throw E('ENTRY_NOT_FOUND', 'Entry not found: ' + id); return e; }
+    _posted() { return this.s.entries.filter((e) => e.status === 'posted'); }
+    _periodFor(date) { return Object.values(this.s.periods).find((p) => p.start <= date && date <= p.end) || null; }
+    _hasLines(code) { return this._posted().some((e) => e.lines.some((l) => l.account === code)); }
+    _next(kind, date, reversal) {
+      const key = (reversal ? 'RV' : PREFIX[kind]) + '-' + date.slice(0, 4);
+      this.s.seq[key] = (this.s.seq[key] || 0) + 1;
+      return key + '-' + String(this.s.seq[key]).padStart(6, '0');
+    }
+    _lines(lines) {
+      if (!Array.isArray(lines) || !lines.length) throw E('NO_LINES', 'Entry has no lines');
+      return lines.map((l, i) => {
+        if (!this.s.accounts[l.account]) throw E('ACCOUNT_NOT_FOUND', `Line ${i + 1}: unknown account ${l.account}`);
+        const debit = toMinor(l.debit == null ? 0 : l.debit, this.s.dec), credit = toMinor(l.credit == null ? 0 : l.credit, this.s.dec);
+        if (debit < 0 || credit < 0) throw E('NEGATIVE_AMOUNT', `Line ${i + 1}: negative amount`);
+        if ((debit > 0) === (credit > 0)) throw E('LINE_ONE_SIDED', `Line ${i + 1}: exactly one of debit/credit must be > 0`);
+        return { account: l.account, debit, credit, memo: l.memo || '', costCenter: l.costCenter || null };
+      });
+    }
+
+    /* ---------- chart of accounts ---------- */
+    addAccount(user, a) {
+      this._can(user, 'account.manage');
+      const { code, name, nameAr = '', type, parent = null, postable = true, subtype = null } = a;
+      if (!code || !name) throw E('ACCOUNT_REQUIRED', 'Account code and name are required');
+      if (this.s.accounts[code]) throw E('ACCOUNT_EXISTS', 'Account code already exists: ' + code);
+      if (!TYPES.includes(type)) throw E('BAD_TYPE', 'Unknown account type: ' + type);
+      let p = null;
+      if (parent) {
+        p = this.s.accounts[parent];
+        if (!p) throw E('PARENT_NOT_FOUND', 'Parent not found: ' + parent);
+        if (p.type !== type) throw E('PARENT_TYPE_MISMATCH', 'Parent has a different type');
+        if (this._hasLines(parent)) throw E('PARENT_HAS_ACTIVITY', 'Parent already has posted lines');
+      }
+      if (p) p.postable = false;
+      this.s.accounts[code] = { code, name, nameAr, type, parent, postable, subtype, active: true, normal: NORMAL[type] };
+      this.s.bal[code] = { d: 0, c: 0 };
+      this._log(user, 'account.add', code, { name, type });
+    }
+    deactivateAccount(user, code) {
+      this._can(user, 'account.manage');
+      const a = this.s.accounts[code]; if (!a) throw E('ACCOUNT_NOT_FOUND', code);
+      a.active = false; this._log(user, 'account.deactivate', code);
+    }
+    deleteAccount(user, code) {
+      this._can(user, 'account.manage');
+      if (!this.s.accounts[code]) throw E('ACCOUNT_NOT_FOUND', code);
+      if (this._hasLines(code) || this.s.entries.some((e) => e.status !== 'void' && e.lines.some((l) => l.account === code)))
+        throw E('ACCOUNT_HAS_ACTIVITY', 'Account is used by entries; deactivate it instead');
+      if (Object.values(this.s.accounts).some((a) => a.parent === code)) throw E('ACCOUNT_HAS_CHILDREN', 'Account has child accounts');
+      delete this.s.accounts[code]; delete this.s.bal[code];
+      this._log(user, 'account.delete', code);
+    }
+
+    /* ---------- fiscal periods ---------- */
+    openFiscalYear(user, year) {
+      this._can(user, 'period.manage');
+      if (this.s.years[year]) throw E('YEAR_EXISTS', 'Fiscal year already exists: ' + year);
+      for (let mth = 1; mth <= 12; mth++) {
+        const mm = String(mth).padStart(2, '0'), last = new Date(Date.UTC(year, mth, 0)).getUTCDate();
+        this.s.periods[`${year}-${mm}`] = { id: `${year}-${mm}`, year, start: `${year}-${mm}-01`, end: `${year}-${mm}-${String(last).padStart(2, '0')}`, status: 'open' };
+      }
+      this.s.years[year] = { year, status: 'open', closingEntry: null };
+      this._log(user, 'year.open', String(year));
+    }
+    closePeriod(user, id) {
+      this._can(user, 'period.close');
+      const p = this.s.periods[id]; if (!p) throw E('NO_PERIOD', 'Unknown period ' + id);
+      p.status = 'closed'; this._log(user, 'period.close', id);
+    }
+    reopenPeriod(user, id, reason) {
+      this._can(user, 'period.reopen');
+      if (!reason || !String(reason).trim()) throw E('REASON_REQUIRED', 'A reason is required to reopen a period');
+      const p = this.s.periods[id]; if (!p) throw E('NO_PERIOD', 'Unknown period ' + id);
+      if (this.s.years[p.year].status === 'closed') throw E('YEAR_CLOSED', 'Year is closed; use reopenYear');
+      p.status = 'open'; this._log(user, 'period.reopen', id, { reason });
+    }
+    _closePeriods(year) { Object.values(this.s.periods).filter((p) => p.year === year).forEach((p) => { p.status = 'closed'; }); }
+
+    /* ---------- journal entries ---------- */
+    createEntry(user, input, _internal = false) {
+      this._can(user, 'entry.create');
+      const { date, description = '', lines, kind = 'regular', source = null, reference = '' } = input;
+      if (!okDate(date)) throw E('BAD_DATE', 'Invalid date: ' + date);
+      if (!KINDS.includes(kind)) throw E('BAD_KIND', 'Unknown entry kind: ' + kind);
+      if (kind === 'closing' && !_internal) throw E('KIND_RESERVED', 'Closing entries are created by closeYear only');
+      const e = {
+        id: this.s.nextId++, kind, date, description, reference, source, lines: this._lines(lines), status: 'draft', number: null,
+        createdBy: user.id, createdAt: this.now(), approvedBy: null, postedBy: null, postedAt: null, reversalOf: null, reversedBy: null,
+      };
+      this.s.entries.push(e);
+      this._log(user, 'entry.create', String(e.id), { kind, date });
+      return clone(e);
+    }
+    updateEntry(user, id, patch) {
+      this._can(user, 'entry.create');
+      const e = this._entry(id);
+      if (e.status !== 'draft') throw E('IMMUTABLE', 'Only drafts can be edited; use a reversal for posted entries');
+      const before = clone(e);
+      if (patch.date !== undefined) { if (!okDate(patch.date)) throw E('BAD_DATE', 'Invalid date'); e.date = patch.date; }
+      if (patch.description !== undefined) e.description = patch.description;
+      if (patch.lines !== undefined) e.lines = this._lines(patch.lines);
+      this._log(user, 'entry.update', String(id), { before: { date: before.date, description: before.description } });
+      return clone(e);
+    }
+    deleteDraft(user, id) {
+      this._can(user, 'entry.create');
+      const e = this._entry(id);
+      if (e.status !== 'draft') throw E('IMMUTABLE', 'Only drafts can be deleted');
+      e.status = 'void'; this._log(user, 'entry.void', String(id));
+    }
+    approveEntry(user, id) {
+      this._can(user, 'entry.approve');
+      const e = this._entry(id);
+      if (e.status !== 'draft') throw E('BAD_STATE', 'Only drafts can be approved');
+      if (this.s.requireApproval && e.createdBy === user.id) throw E('SEGREGATION', 'Creator cannot approve their own entry');
+      this._checkBalanced(e);
+      e.status = 'approved'; e.approvedBy = user.id; this._log(user, 'entry.approve', String(id));
+    }
+    _checkBalanced(e) {
+      if (e.lines.length < 2) throw E('TOO_FEW_LINES', 'An entry needs at least two lines');
+      const d = e.lines.reduce((s, l) => s + l.debit, 0), c = e.lines.reduce((s, l) => s + l.credit, 0);
+      if (d !== c) throw E('UNBALANCED', `Debit ${this.f(d)} != Credit ${this.f(c)}`, { debit: d, credit: c });
+      if (d === 0) throw E('ZERO_ENTRY', 'Entry total is zero');
+    }
+    postEntry(user, id) { this._can(user, 'entry.post'); return this._tx(() => this._post(user, id)); }
+    _post(user, id, opt = {}) {
+      const e = this._entry(id);
+      if (e.status === 'posted') throw E('ALREADY_POSTED', 'Entry already posted');
+      if (e.status === 'void') throw E('BAD_STATE', 'Entry is void');
+      if (this.s.requireApproval && e.status !== 'approved' && !opt.system) throw E('NOT_APPROVED', 'Entry must be approved before posting');
+      this._checkBalanced(e);
+      for (const l of e.lines) {
+        const a = this.s.accounts[l.account];
+        if (!a) throw E('ACCOUNT_NOT_FOUND', l.account);
+        if (!a.active) throw E('ACCOUNT_INACTIVE', 'Account is inactive: ' + l.account);
+        if (!a.postable) throw E('ACCOUNT_NOT_POSTABLE', 'Account does not accept direct posting: ' + l.account);
+      }
+      const p = this._periodFor(e.date);
+      if (!p) throw E('NO_PERIOD', 'No fiscal period for ' + e.date);
+      if (p.status !== 'open' && !opt.allowClosed) throw E('PERIOD_CLOSED', 'Period is closed: ' + p.id);
+      if (e.source && this._posted().some((x) => x.id !== e.id && !x.reversedBy && x.source && x.source.type === e.source.type && x.source.id === e.source.id))
+        throw E('DUPLICATE_SOURCE', `Source already posted: ${e.source.type}/${e.source.id}`);
+      e.number = this._next(e.kind, e.date, !!e.reversalOf);
+      e.status = 'posted'; e.postedBy = user.id; e.postedAt = this.now();
+      for (const l of e.lines) { const b = this.s.bal[l.account]; b.d += l.debit; b.c += l.credit; }
+      this._log(user, 'entry.post', String(e.id), { number: e.number });
+      return clone(e);
+    }
+    reverseEntry(user, id, { date, reason } = {}) {
+      this._can(user, 'entry.reverse');
+      if (!reason || !String(reason).trim()) throw E('REASON_REQUIRED', 'A reason is required');
+      return this._tx(() => this._reverse(user, id, { date, reason }, {}));
+    }
+    _reverse(user, id, { date, reason }, opt) {
+      const o = this._entry(id);
+      if (o.status !== 'posted') throw E('BAD_STATE', 'Only posted entries can be reversed');
+      if (o.reversalOf) throw E('CANNOT_REVERSE_REVERSAL', 'A reversal cannot be reversed');
+      if (o.reversedBy) throw E('ALREADY_REVERSED', 'Entry already reversed');
+      const d = date || o.date;
+      if (!okDate(d)) throw E('BAD_DATE', 'Invalid date');
+      const r = {
+        id: this.s.nextId++, kind: o.kind, date: d, description: `Reversal of ${o.number}: ${reason}`, reference: o.number, source: null,
+        lines: o.lines.map((l) => ({ account: l.account, debit: l.credit, credit: l.debit, memo: l.memo, costCenter: l.costCenter })),
+        status: 'draft', number: null, createdBy: user.id, createdAt: this.now(), approvedBy: null, postedBy: null, postedAt: null, reversalOf: o.id, reversedBy: null,
+      };
+      this.s.entries.push(r);
+      this._post(user, r.id, { system: true, allowClosed: opt.allowClosed });
+      o.reversedBy = r.id;
+      this._log(user, 'entry.reverse', String(o.id), { reversal: r.id, reason });
+      return clone(r);
+    }
+    getEntry(id) { return clone(this._entry(id)); }
+    listEntries({ status, from, to } = {}) {
+      return clone(this.s.entries.filter((e) => (!status || e.status === status) && (!from || e.date >= from) && (!to || e.date <= to)));
+    }
+
+    /* ---------- reporting ---------- */
+    _sum(pred) {
+      const m = {}; Object.keys(this.s.accounts).forEach((c) => { m[c] = { d: 0, c: 0 }; });
+      this._posted().filter(pred).forEach((e) => e.lines.forEach((l) => { if (m[l.account]) { m[l.account].d += l.debit; m[l.account].c += l.credit; } }));
+      return m;
+    }
+    ledger(code, { from = '0000-01-01', to = '9999-12-31' } = {}) {
+      const a = this.s.accounts[code]; if (!a) throw E('ACCOUNT_NOT_FOUND', code);
+      const sign = a.normal === 'debit' ? 1 : -1;
+      const es = this._posted().filter((e) => e.lines.some((l) => l.account === code)).sort((x, y) => x.date.localeCompare(y.date) || x.id - y.id);
+      let run = 0;
+      es.filter((e) => e.date < from).forEach((e) => e.lines.filter((l) => l.account === code).forEach((l) => { run += (l.debit - l.credit) * sign; }));
+      const opening = run, rows = [];
+      es.filter((e) => e.date >= from && e.date <= to).forEach((e) => e.lines.filter((l) => l.account === code).forEach((l) => {
+        run += (l.debit - l.credit) * sign;
+        rows.push({ date: e.date, number: e.number, entryId: e.id, description: e.description, debit: l.debit, credit: l.credit, balance: run });
+      }));
+      return { account: code, opening, rows, closing: run };
+    }
+    trialBalance({ from, to, stage = 'unadjusted' } = {}) {
+      const kinds = STAGES[stage]; if (!kinds) throw E('BAD_STAGE', 'Unknown stage ' + stage);
+      from = from || '0000-01-01'; to = to || '9999-12-31';
+      const acc = {};
+      Object.keys(this.s.accounts).forEach((c) => { acc[c] = { od: 0, oc: 0, md: 0, mc: 0 }; });
+      // postClosing = balances as of `to` (permanent accounts only); other stages show opening + period movement
+      const asOf = stage === 'postClosing';
+      this._posted().forEach((e) => e.lines.forEach((l) => {
+        const r = acc[l.account]; if (!r) return;
+        if (e.date < from || (asOf && e.date <= to)) { r.od += l.debit; r.oc += l.credit; }
+        else if (!asOf && e.date <= to && kinds.includes(e.kind)) { r.md += l.debit; r.mc += l.credit; }
+      }));
+      const T = { openDr: 0, openCr: 0, movDr: 0, movCr: 0, closeDr: 0, closeCr: 0 }, rows = [];
+      Object.keys(acc).sort().forEach((code) => {
+        const r = acc[code], no = r.od - r.oc, nc = no + r.md - r.mc;
+        const row = { code, name: this.s.accounts[code].name, openDr: no > 0 ? no : 0, openCr: no < 0 ? -no : 0, movDr: r.md, movCr: r.mc, closeDr: nc > 0 ? nc : 0, closeCr: nc < 0 ? -nc : 0 };
+        if (Object.keys(T).every((k) => row[k] === 0)) return;
+        Object.keys(T).forEach((k) => { T[k] += row[k]; });
+        rows.push(row);
+      });
+      const balanced = T.openDr === T.openCr && T.movDr === T.movCr && T.closeDr === T.closeCr;
+      return { from, to, stage, rows, totals: T, balanced, difference: T.closeDr - T.closeCr };
+    }
+    incomeStatement({ from, to }) {
+      const m = this._sum((e) => e.date >= from && e.date <= to && e.kind !== 'closing');
+      const g = { revenue: [], otherIncome: [], cogs: [], opex: [], finance: [], tax: [] };
+      Object.values(this.s.accounts).sort((a, b) => a.code.localeCompare(b.code)).forEach((a) => {
+        if (a.type !== 'revenue' && a.type !== 'expense') return;
+        const amt = a.type === 'revenue' ? m[a.code].c - m[a.code].d : m[a.code].d - m[a.code].c;
+        if (!amt) return;
+        const key = a.type === 'revenue' ? (a.subtype === 'other' ? 'otherIncome' : 'revenue') : a.subtype === 'cogs' ? 'cogs' : a.subtype === 'finance' ? 'finance' : a.subtype === 'tax' ? 'tax' : 'opex';
+        g[key].push({ code: a.code, name: a.name, amount: amt });
+      });
+      const S = (a) => a.reduce((s, x) => s + x.amount, 0);
+      const t = { revenue: S(g.revenue), otherIncome: S(g.otherIncome), cogs: S(g.cogs), opex: S(g.opex), finance: S(g.finance), tax: S(g.tax) };
+      t.grossProfit = t.revenue - t.cogs; t.operatingProfit = t.grossProfit - t.opex;
+      t.profitBeforeTax = t.operatingProfit + t.otherIncome - t.finance; t.netIncome = t.profitBeforeTax - t.tax;
+      return { ...g, totals: t };
+    }
+    balanceSheet({ asOf }) {
+      const m = this._sum((e) => e.date <= asOf), out = { assets: { current: [], noncurrent: [] }, liabilities: { current: [], noncurrent: [] }, equity: [] };
+      let result = 0;
+      Object.values(this.s.accounts).sort((a, b) => a.code.localeCompare(b.code)).forEach((a) => {
+        const dr = m[a.code].d - m[a.code].c;
+        if (a.type === 'revenue' || a.type === 'expense') { result -= dr; return; }
+        if (!dr) return;
+        const sec = a.subtype === 'noncurrent' ? 'noncurrent' : 'current';
+        if (a.type === 'asset') out.assets[sec].push({ code: a.code, name: a.name, amount: dr });
+        else if (a.type === 'liability') out.liabilities[sec].push({ code: a.code, name: a.name, amount: -dr });
+        else out.equity.push({ code: a.code, name: a.name, amount: -dr });
+      });
+      const S = (a) => a.reduce((s, x) => s + x.amount, 0);
+      const t = { assets: S(out.assets.current) + S(out.assets.noncurrent), liabilities: S(out.liabilities.current) + S(out.liabilities.noncurrent), equityAccounts: S(out.equity), currentResult: result };
+      t.equity = t.equityAccounts + result; t.liabilitiesAndEquity = t.liabilities + t.equity;
+      return { ...out, totals: t, balanced: t.assets === t.liabilitiesAndEquity, difference: t.assets - t.liabilitiesAndEquity };
+    }
+
+    /* ---------- year-end ---------- */
+    closeYear(user, { year }) {
+      this._can(user, 'year.close');
+      return this._tx(() => {
+        const y = this.s.years[year];
+        if (!y) throw E('YEAR_NOT_FOUND', 'Unknown fiscal year ' + year);
+        if (y.status === 'closed') throw E('YEAR_ALREADY_CLOSED', 'Year already closed');
+        if (this.s.years[year - 1] && this.s.years[year - 1].status !== 'closed') throw E('PREVIOUS_YEAR_OPEN', 'Close the previous year first');
+        const from = `${year}-01-01`, to = `${year}-12-31`;
+        const pending = this.s.entries.filter((e) => (e.status === 'draft' || e.status === 'approved') && e.date >= from && e.date <= to);
+        if (pending.length) throw E('PENDING_ENTRIES', `${pending.length} unposted entries in ${year}`, { ids: pending.map((e) => e.id) });
+        const tb = this.trialBalance({ from, to, stage: 'adjusted' });
+        if (!tb.balanced) throw E('TB_UNBALANCED', 'Trial balance is not balanced; cannot close', { difference: tb.difference });
+        const re = this.s.accounts[this.s.retainedEarnings];
+        if (!re || !re.active || !re.postable || re.type !== 'equity') throw E('RE_ACCOUNT_INVALID', 'Retained earnings account is missing or invalid');
+        const m = this._sum((e) => e.date <= to), lines = [];
+        Object.values(this.s.accounts).sort((a, b) => a.code.localeCompare(b.code)).forEach((a) => {
+          if (!(a.type === 'revenue' || a.type === 'expense' || a.subtype === 'drawings')) return;
+          const net = m[a.code].d - m[a.code].c; if (!net) return;
+          lines.push(net > 0 ? { account: a.code, debit: 0, credit: net, memo: '', costCenter: null } : { account: a.code, debit: -net, credit: 0, memo: '', costCenter: null });
+        });
+        let closingId = null;
+        if (lines.length) {
+          const x = lines.reduce((s, l) => s + l.debit - l.credit, 0);
+          lines.push(x > 0 ? { account: re.code, debit: 0, credit: x, memo: '', costCenter: null } : { account: re.code, debit: -x, credit: 0, memo: '', costCenter: null });
+          const e = { id: this.s.nextId++, kind: 'closing', date: to, description: `Closing entry ${year}`, reference: '', source: { type: 'closing', id: String(year) }, lines, status: 'draft', number: null, createdBy: user.id, createdAt: this.now(), approvedBy: null, postedBy: null, postedAt: null, reversalOf: null, reversedBy: null };
+          this.s.entries.push(e);
+          this._post(user, e.id, { system: true });
+          closingId = e.id;
+        }
+        this._closePeriods(year);
+        y.status = 'closed'; y.closingEntry = closingId;
+        this._log(user, 'year.close', String(year), { closingEntry: closingId });
+        return { year, closingEntry: closingId ? clone(this._entry(closingId)) : null };
+      });
+    }
+    reopenYear(user, { year, reason }) {
+      this._can(user, 'period.reopen');
+      if (!reason || !String(reason).trim()) throw E('REASON_REQUIRED', 'A reason is required to reopen a year');
+      return this._tx(() => {
+        const y = this.s.years[year];
+        if (!y || y.status !== 'closed') throw E('BAD_STATE', 'Year is not closed');
+        if (this.s.years[year + 1] && this.s.years[year + 1].status === 'closed') throw E('LATER_YEAR_CLOSED', 'Reopen the later year first');
+        if (y.closingEntry) this._reverse(user, y.closingEntry, { date: `${year}-12-31`, reason: 'Year reopened: ' + reason }, { allowClosed: true });
+        Object.values(this.s.periods).filter((p) => p.year === year).forEach((p) => { p.status = 'open'; });
+        y.status = 'open'; y.closingEntry = null;
+        this._log(user, 'year.reopen', String(year), { reason });
+      });
+    }
+
+    /* ---------- integrity ---------- */
+    verifyAudit() {
+      let prev = 'GENESIS';
+      for (const r of this.s.audit) {
+        const h = hash(prev + JSON.stringify([r.seq, r.ts, r.user, r.action, r.ref, r.data]));
+        if (r.prev !== prev || r.hash !== h) return { ok: false, brokenAt: r.seq };
+        prev = r.hash;
+      }
+      return { ok: true };
+    }
+    integrityReport() {
+      const problems = [], calc = {};
+      Object.keys(this.s.accounts).forEach((c) => { calc[c] = { d: 0, c: 0 }; });
+      const nums = new Set();
+      this._posted().forEach((e) => {
+        const d = e.lines.reduce((s, l) => s + l.debit, 0), c = e.lines.reduce((s, l) => s + l.credit, 0);
+        if (d !== c) problems.push({ type: 'UNBALANCED_ENTRY', entry: e.id, debit: d, credit: c });
+        if (nums.has(e.number)) problems.push({ type: 'DUPLICATE_NUMBER', entry: e.id, number: e.number });
+        nums.add(e.number);
+        if (!this._periodFor(e.date)) problems.push({ type: 'NO_PERIOD', entry: e.id });
+        e.lines.forEach((l) => { if (!calc[l.account]) problems.push({ type: 'UNKNOWN_ACCOUNT', entry: e.id, account: l.account }); else { calc[l.account].d += l.debit; calc[l.account].c += l.credit; } });
+      });
+      Object.keys(calc).forEach((c) => {
+        const b = this.s.bal[c] || { d: 0, c: 0 };
+        if (b.d !== calc[c].d || b.c !== calc[c].c) problems.push({ type: 'BALANCE_MISMATCH', account: c, cached: b, recomputed: calc[c] });
+      });
+      if (!this.verifyAudit().ok) problems.push({ type: 'AUDIT_CHAIN_BROKEN' });
+      return { ok: problems.length === 0, problems };
+    }
+    toJSON() { return JSON.stringify(this.s); }
+    static fromJSON(text, opts = {}) {
+      const l = new Ledger(opts); l.s = JSON.parse(text);
+      const r = l.integrityReport();
+      if (!r.ok) throw E('INTEGRITY', 'Data failed integrity checks', r.problems);
+      return l;
+    }
+  }
+
+  const api = { Ledger, AccountingError, toMinor, fmtMinor, TYPES, ROLES };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.AccountingEngine = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+const {Ledger,AccountingError}=window.AccountingEngine;
+const KEY='am_erp_v3';
+const DEF=[['1000','Assets','الأصول','asset',null,null,1],['1100','Cash','الصندوق','asset','1000'],['1200','Bank','البنك','asset','1000'],['1300','Accounts Receivable','العملاء','asset','1000'],['1400','Inventory','المخزون','asset','1000'],['1500','Equipment','المعدات','asset','1000','noncurrent'],['1590','Accumulated Depreciation','مجمع إهلاك المعدات','asset','1000','noncurrent'],
+['2000','Liabilities','الالتزامات','liability',null,null,1],['2100','Accounts Payable','الموردون','liability','2000'],['2200','Accrued Expenses','مصروفات مستحقة','liability','2000'],['2300','Loans','قروض','liability','2000','noncurrent'],
+['3000','Equity','حقوق الملكية','equity',null,null,1],['3100','Owner\'s Capital','رأس المال','equity','3000'],['3200','Retained Earnings','الأرباح المحتجزة','equity','3000'],['3300','Owner\'s Drawings','المسحوبات','equity','3000','drawings'],
+['4000','Revenue','الإيرادات','revenue',null,null,1],['4100','Sales Revenue','إيرادات المبيعات','revenue','4000'],['4200','Service Revenue','إيرادات الخدمات','revenue','4000'],
+['5000','Expenses','المصروفات','expense',null,null,1],['5100','Cost of Goods Sold','تكلفة البضاعة المباعة','expense','5000','cogs'],['5200','Salaries Expense','الرواتب','expense','5000'],['5300','Rent Expense','الإيجار','expense','5000'],['5400','Depreciation Expense','مصروف الإهلاك','expense','5000'],['5500','Miscellaneous Expense','مصروفات متنوعة','expense','5000']];
 const CUR=[['USD','$'],['EUR','€'],['GBP','£'],['EGP','E£'],['SAR','SAR'],['AED','AED'],['KWD','KWD'],['QAR','QAR'],['JOD','JOD'],['TRY','₺'],['INR','₹'],['CAD','C$']];
-const D={sub:['Accounting Cycle','الدورة المحاسبية'],entries:['Entries','القيود'],accounts:['Accounts','الحسابات'],ledger:['Ledger','الأستاذ'],trial:['Trial Bal.','الميزان'],reports:['Reports','القوائم'],cycle:['Cycle','الدورة'],
-newEntry:['New journal entry','قيد يومية جديد'],regular:['Regular','عادي'],adjusting:['Adjusting','تسوية'],closing:['Closing','إقفال'],desc:['Description (e.g. Cash purchase of goods)','البيان (مثال: شراء بضاعة نقداً)'],pick:['Select account','اختر الحساب'],dr:['Debit','مدين'],cr:['Credit','دائن'],addLine:['+ Add line','+ إضافة سطر'],bal:['Balanced','متوازن'],unbal:['Not balanced','غير متوازن'],saveEntry:['Save entry','حفظ القيد'],journal:['Journal','سجل القيود'],none:['Nothing here yet.','لا توجد بيانات بعد.'],
-eDesc:['Enter a description','اكتب البيان'],eLines:['An entry needs at least two lines','القيد يحتاج سطرين على الأقل'],eLine:['Each line needs an account and one amount (debit or credit)','كل سطر يحتاج حساب ومبلغ واحد فقط (مدين أو دائن)'],eBal:['Entry is not balanced: debit ≠ credit','القيد غير متوازن: المدين لا يساوي الدائن'],del:['Delete','حذف'],cDel:['Delete this entry?','حذف هذا القيد؟'],
-addAcc:['Add account','إضافة حساب'],code:['Code','الكود'],aname:['Account name','اسم الحساب'],add:['Add','إضافة'],asset:['Assets','أصول'],liability:['Liabilities','التزامات'],equity:['Equity','حقوق ملكية'],revenue:['Revenue','إيرادات'],expense:['Expenses','مصروفات'],eCodeName:['Enter code and name','اكتب الكود والاسم'],eUsed:['Code already used','هذا الكود مستخدم'],eAct:['Account has activity and cannot be deleted','عليه حركة، لا يمكن حذفه'],
-gl:['General Ledger','دفتر الأستاذ'],dd:['Date & description','التاريخ والبيان'],balance:['Balance','الرصيد'],noAct:['No activity','لا توجد حركة'],
-tb:['Trial Balance','ميزان المراجعة'],raw:['Before adjusting','قبل التسوية'],adj:['After adjusting','بعد التسوية'],post:['After closing','بعد الإقفال'],account:['Account','الحساب'],total:['Total','الإجمالي'],tbOk:['✓ Trial balance is balanced','✓ الميزان متوازن'],tbNo:['✗ Trial balance is not balanced','✗ الميزان غير متوازن'],prep:['Prepared by','إعداد'],
-is:['Income Statement','قائمة الدخل'],bs:['Balance Sheet','قائمة المركز المالي'],tRev:['Total revenue','إجمالي الإيرادات'],tExp:['Total expenses','إجمالي المصروفات'],ni:['Net income','صافي الربح'],nl:['Net loss','صافي الخسارة'],tAs:['Total assets','إجمالي الأصول'],tLi:['Total liabilities','إجمالي الالتزامات'],tEq:['Total equity','إجمالي حقوق الملكية'],tLE:['Liabilities + Equity','الالتزامات + حقوق الملكية'],niOpen:['Net income (before closing)','صافي الربح (قبل الإقفال)'],eqOk:['✓ Assets = Liabilities + Equity','✓ الأصول = الالتزامات + حقوق الملكية'],eqNo:['✗ Accounting equation is not balanced','✗ المعادلة المحاسبية غير متوازنة'],
+const D={sub:['Accounting Cycle','الدورة المحاسبية'],
+dash:['Dashboard','لوحة التحكم'],entries:['Journal Entries','القيود اليومية'],coa:['Chart of Accounts','دليل الحسابات'],ledger:['General Ledger','دفتر الأستاذ'],tb:['Trial Balance','ميزان المراجعة'],reports:['Reports','التقارير'],cycle:['Accounting Cycle','الدورة المحاسبية'],audit:['Audit Log','سجل العمليات'],settings:['Settings','الإعدادات'],
+year:['Fiscal year','السنة المالية'],tAs:['Total assets','إجمالي الأصول'],tLi:['Total liabilities','إجمالي الالتزامات'],tEq:['Total equity','حقوق الملكية'],revenue:['Revenue','الإيرادات'],expenses:['Expenses','المصروفات'],ni:['Net income','صافي الربح'],nl:['Net loss','صافي الخسارة'],chartT:['Monthly revenue vs expenses','الإيرادات والمصروفات شهريًا'],recent:['Recent entries','آخر القيود'],tbStatus:['Trial balance status','حالة الميزان'],balOk:['✓ Balanced','✓ متوازن'],balNo:['✗ Not balanced','✗ غير متوازن'],progress:['Cycle progress','تقدم الدورة'],drafts:['Draft entries','قيود مسودة'],none:['Nothing here yet.','لا توجد بيانات بعد.'],
+newEntry:['New journal entry','قيد يومية جديد'],editEntry:['Edit draft entry','تعديل قيد مسودة'],date:['Date','التاريخ'],regular:['Regular','عادي'],adjusting:['Adjusting','تسوية'],closing:['Closing','إقفال'],opening:['Opening','افتتاحي'],desc:['Description (e.g. Cash purchase of goods)','البيان (مثال: شراء بضاعة نقداً)'],
+st_manual:['Manual entry','قيد يدوي'],st_invoice:['Invoice','فاتورة'],st_receipt:['Receipt','إيصال'],st_payroll:['Payroll','رواتب'],st_bank:['Bank statement','كشف بنك'],st_other:['Other','أخرى'],docNo:['Document no. (optional)','رقم المستند (اختياري)'],
+pick:['Select account','اختر الحساب'],dr:['Debit','مدين'],cr:['Credit','دائن'],addLine:['+ Add line','+ إضافة سطر'],diff:['Difference','الفرق'],saveDraft:['Save as draft','حفظ كمسودة'],savePost:['Save & post','حفظ وترحيل'],journal:['Journal','سجل القيود'],
+draft:['Draft','مسودة'],posted:['Posted','مرحّل'],reversed:['Reversed','معكوس'],reversal:['Reversal','قيد عكسي'],post:['Post','ترحيل'],reverse:['Reverse','عكس'],del:['Delete','حذف'],edit:['Edit','تعديل'],all:['All','الكل'],cDel:['Delete this draft?','حذف هذه المسودة؟'],reasonQ:['Reason?','السبب؟'],revDate:['Reversal date (YYYY-MM-DD)','تاريخ القيد العكسي (YYYY-MM-DD)'],eDesc:['Enter a description','اكتب البيان'],
+addAcc:['Add account','إضافة حساب'],code:['Code','الكود'],aname:['Name (English)','الاسم بالإنجليزية'],anameAr:['Name (Arabic)','الاسم بالعربية'],type:['Type','النوع'],parent:['Parent account','الحساب الأب'],noParent:['— none —','— بدون —'],inactive:['Inactive','متوقف'],deact:['Deactivate','إيقاف'],
+asset:['Assets','أصول'],liability:['Liabilities','التزامات'],equity:['Equity','حقوق ملكية'],revenue2:['Revenue','إيرادات'],expense:['Expenses','مصروفات'],balance:['Balance','الرصيد'],
+gl:['General Ledger','دفتر الأستاذ'],from:['From','من'],to:['To','إلى'],account:['Account','الحساب'],dd:['Date & description','التاريخ والبيان'],noAct:['No activity','لا توجد حركة'],openBal:['Opening balance','رصيد أول المدة'],
+raw:['Before adjusting','قبل التسوية'],adj:['After adjusting','بعد التسوية'],post2:['After closing','بعد الإقفال'],detailed:['Show opening & movement','عرض الافتتاحي والحركة'],total:['Total','الإجمالي'],prep:['Prepared by','إعداد'],openC:['Opening','الافتتاحي'],movC:['Movement','الحركة'],closeC:['Closing','الختامي'],
+is:['Income Statement','قائمة الدخل'],bs:['Balance Sheet','قائمة المركز المالي'],jb:['General Journal','دفتر اليومية'],ar:['Adjusting entries','قيود التسوية'],cr2:['Closing entries','قيود الإقفال'],
+tRev:['Total revenue','إجمالي الإيرادات'],cogs:['Cost of goods sold','تكلفة البضاعة المباعة'],gp:['Gross profit','مجمل الربح'],opex:['Operating expenses','مصروفات التشغيل'],op:['Operating profit','الربح التشغيلي'],oi:['Other income','إيرادات أخرى'],fin:['Finance costs','تكاليف التمويل'],pbt:['Profit before tax','الربح قبل الضريبة'],tax:['Income tax','ضريبة الدخل'],
+curAs:['Current assets','الأصول المتداولة'],ncAs:['Non-current assets','الأصول غير المتداولة'],curLi:['Current liabilities','الالتزامات المتداولة'],ncLi:['Non-current liabilities','الالتزامات غير المتداولة'],eqS:['Equity','حقوق الملكية'],curRes:['Current period result','نتيجة الفترة'],tLE:['Liabilities + Equity','الالتزامات + حقوق الملكية'],eqOk:['✓ Assets = Liabilities + Equity','✓ الأصول = الالتزامات + حقوق الملكية'],eqNo:['✗ Accounting equation is not balanced','✗ المعادلة المحاسبية غير متوازنة'],
+csv:['Export CSV','تصدير CSV'],print:['Print / PDF','طباعة / PDF'],totals:['Totals','الإجماليات'],src:['Source','المصدر'],
 s1:['1. Analyze source documents','1. تحليل المستندات'],s2:['2. Journal entries','2. قيود اليومية'],s3:['3. Post to ledger','3. الترحيل للأستاذ'],s4:['4. Unadjusted trial balance','4. ميزان المراجعة قبل التسوية'],s5:['5. Adjusting entries','5. قيود التسوية'],s6:['6. Adjusted trial balance','6. ميزان المراجعة بعد التسوية'],s7:['7. Financial statements','7. القوائم المالية'],s8:['8. Closing entries','8. قيود الإقفال'],s9:['9. Post-closing trial balance','9. ميزان ما بعد الإقفال'],
-manual:['Manual','يدوي'],auto:['Automatic','تلقائي'],ent:['entries','قيد'],cycleT:['Accounting cycle steps','خطوات الدورة المحاسبية'],closeT:['Closing','الإقفال'],closeP:['Creates one closing entry: zeroes revenue, expenses and drawings, and moves net income or loss to Owner\'s Capital (3101). Run it after entering adjusting entries.','ينشئ قيد إقفال تلقائي: يُصفّر الإيرادات والمصروفات والمسحوبات، ويرحّل صافي الربح أو الخسارة إلى رأس المال (3101). نفّذيه بعد إدخال قيود التسوية.'],runClose:['Run closing entry','تنفيذ قيد الإقفال'],undoClose:['Undo closing entries','إلغاء قيود الإقفال'],nothing:['Nothing to close','لا توجد أرصدة للإقفال'],noCap:['Capital account 3101 not found','حساب رأس المال 3101 غير موجود'],closeDesc:['Closing entry: revenue, expenses and drawings','قيد إقفال الإيرادات والمصروفات والمسحوبات'],
-settings:['Settings','الإعدادات'],general:['General','عام'],language:['Language','اللغة'],currency:['Currency','العملة'],decimals:['Decimal places','الخانات العشرية'],theme:['Theme','المظهر'],auto2:['Auto','تلقائي'],light:['Light','فاتح'],dark:['Dark','داكن'],tsize:['Text size','حجم الخط'],small:['Small','صغير'],medium:['Medium','متوسط'],large:['Large','كبير'],
-company:['Company','الشركة'],coName:['Company name','اسم الشركة'],prepBy:['Prepared by','المُعِد'],security:['Security','الأمان'],pwOn:['Password protection is ON.','الحماية بكلمة سر مفعّلة.'],pwOff:['No password set. Add one to lock the app.','لا توجد كلمة سر. أضيفي واحدة لقفل البرنامج.'],curPw:['Current password','كلمة السر الحالية'],newPw:['New password','كلمة سر جديدة'],confPw:['Confirm password','تأكيد كلمة السر'],savePw:['Save password','حفظ كلمة السر'],rmPw:['Remove password','إزالة كلمة السر'],lockLeave:['Lock when leaving the app','القفل عند الخروج من البرنامج'],lockNow:['Lock now','قفل الآن'],ePwLen:['Password must be at least 4 characters','كلمة السر 4 أحرف على الأقل'],ePwMis:['Passwords do not match','كلمتا السر غير متطابقتين'],ePwBad:['Wrong password','كلمة السر خاطئة'],pwSaved:['Password saved','تم حفظ كلمة السر'],pwRemoved:['Password removed','تمت إزالة كلمة السر'],enterPw:['Enter your password','أدخلي كلمة السر'],unlock:['Unlock','فتح'],
-look:['Appearance','المظهر العام'],wmShow:['Show logo watermark','إظهار شعار الخلفية'],wmStr:['Watermark strength','وضوح الشعار'],data:['Data','البيانات'],dataP:['Data is stored on this device only. Save a backup to move it to another device.','البيانات محفوظة على هذا الجهاز فقط. احفظي نسخة لنقلها لجهاز آخر.'],backup:['Backup','حفظ نسخة'],restore:['Restore','استرجاع'],csv:['Export CSV','تصدير CSV'],print:['Print / PDF','طباعة / PDF'],reset:['Erase all entries','مسح كل القيود'],cReset:['This will erase all entries and accounts. Continue?','سيتم مسح كل القيود والحسابات. متأكدة؟'],badFile:['Invalid file','ملف غير صالح'],about:['About','عن البرنامج']};
-const t=k=>(D[k]||[k,k])[S.settings.lang==='ar'?1:0];
-const KINDS={raw:['regular'],adj:['regular','adjusting'],post:['regular','adjusting','closing']};
-const TABS=[['entries','📒'],['accounts','🗂️'],['ledger','📖'],['trial','⚖️'],['reports','📊'],['cycle','🔒']];
-function norm(s){
- if(!s||!s.accounts||!s.entries)s={accounts:[],entries:[]};
- const km={'عادي':'regular','تسوية':'adjusting','إقفال':'closing'};
- if(!s.accounts.length)s.accounts=DEF.map(a=>({code:a[0],name:a[1],ar:a[2],type:a[3]}));
- s.accounts.forEach(a=>{const d=DEF.find(x=>x[0]===a.code);if(d&&!a.ar){a.name=d[1];a.ar=d[2]}});
- s.entries.forEach(e=>e.kind=km[e.kind]||e.kind);
- s.settings=Object.assign({lang:'en',cur:'USD',dec:2,theme:'auto',size:'m',co:'',acct:'Abdelazeem Mandour',wm:true,wmo:11,lockLeave:false,pw:''},s.settings);
- return s}
-function load(){let s=null;try{s=JSON.parse(localStorage.getItem(KEY))}catch(e){}return norm(s)}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
-let S=load(),tab='entries',LA='',TS='raw';
-const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:+S.settings.dec,maximumFractionDigits:+S.settings.dec});
-const mny=n=>(CUR.find(c=>c[0]===S.settings.cur)||CUR[0])[1]+' '+fmt(n);
-const acc=c=>S.accounts.find(a=>a.code===c),nm=a=>S.settings.lang==='ar'&&a.ar?a.ar:a.name;
-const sorted=()=>[...S.entries].sort((a,b)=>a.date.localeCompare(b.date)||a.id-b.id);
-const opts=()=>`<option value="">${t('pick')}</option>`+S.accounts.map(a=>`<option value="${a.code}">${a.code} – ${esc(nm(a))}</option>`).join('');
+manual:['Manual','يدوي'],auto:['Automatic','تلقائي'],ent:['entries','قيد'],closeYear:['Close fiscal year','إقفال السنة المالية'],reopenYear:['Reopen year','إعادة فتح السنة'],addYear:['Add next year','إضافة السنة التالية'],periods:['Fiscal periods','الفترات المحاسبية'],open:['Open','مفتوحة'],closed:['Closed','مغلقة'],closeP:['Close','إغلاق'],reopenP:['Reopen','فتح'],cClose:['Close this fiscal year? Closing entries will be posted.','إقفال السنة المالية؟ سيتم ترحيل قيد الإقفال.'],closeNote:['Closing zeroes revenue, expenses and drawings and moves the result to Retained Earnings (3200). Post all drafts first.','الإقفال يُصفّر الإيرادات والمصروفات والمسحوبات ويرحّل النتيجة إلى الأرباح المحتجزة (3200). رحّل كل المسودات أولًا.'],
+auditT:['Audit log','سجل العمليات'],integrity:['Data integrity','سلامة البيانات'],intOk:['✓ All checks passed','✓ اجتازت كل الفحوصات'],intBad:['✗ Problems found','✗ توجد مشاكل'],time:['Time','الوقت'],user:['User','المستخدم'],action:['Action','العملية'],ref:['Ref','المرجع'],
+settings2:['Settings','الإعدادات'],general:['General','عام'],language:['Language','اللغة'],currency:['Currency','العملة'],decimals:['Decimals shown','الخانات المعروضة'],theme:['Theme','المظهر'],auto2:['Auto','تلقائي'],light:['Light','فاتح'],dark:['Dark','داكن'],tsize:['Text size','حجم الخط'],small:['Small','صغير'],medium:['Medium','متوسط'],large:['Large','كبير'],
+company:['Company','الشركة'],coName:['Company name','اسم الشركة'],prepBy:['Prepared by','المُعِد'],security:['Security','الأمان'],pwOn:['Password protection is ON.','الحماية بكلمة سر مفعّلة.'],pwOff:['No password set. Add one to lock the app.','لا توجد كلمة سر. أضف واحدة لقفل البرنامج.'],curPw:['Current password','كلمة السر الحالية'],newPw:['New password','كلمة سر جديدة'],confPw:['Confirm password','تأكيد كلمة السر'],savePw:['Save password','حفظ كلمة السر'],rmPw:['Remove password','إزالة كلمة السر'],lockLeave:['Lock when leaving the app','القفل عند الخروج من البرنامج'],lockNow:['Lock now','قفل الآن'],ePwLen:['Password must be at least 4 characters','كلمة السر 4 أحرف على الأقل'],ePwMis:['Passwords do not match','كلمتا السر غير متطابقتين'],ePwBad:['Wrong password','كلمة السر خاطئة'],pwSaved:['Password saved','تم حفظ كلمة السر'],pwRemoved:['Password removed','تمت إزالة كلمة السر'],enterPw:['Enter your password','أدخل كلمة السر'],unlock:['Unlock','فتح'],
+look:['Appearance','المظهر العام'],wmShow:['Show logo watermark','إظهار شعار الخلفية'],wmStr:['Watermark strength','وضوح الشعار'],data:['Data','البيانات'],dataP:['Data is stored on this device only. Save a backup to move it to another device.','البيانات محفوظة على هذا الجهاز فقط. احفظ نسخة لنقلها لجهاز آخر.'],backup:['Backup','حفظ نسخة'],restore:['Restore','استرجاع'],check:['Check data integrity','فحص سلامة البيانات'],reset:['Erase everything','مسح كل البيانات'],cReset:['This erases all entries and accounts. Continue?','سيتم مسح كل القيود والحسابات. متأكد؟'],badFile:['Invalid or tampered file','ملف غير صالح أو معدّل'],about:['About','عن البرنامج'],corrupt:['Stored data failed its integrity check. Saving is disabled so nothing is overwritten. Restore a backup or erase everything in Settings.','فشل فحص سلامة البيانات المخزّنة. تم إيقاف الحفظ حتى لا يُكتب فوقها شيء. استرجع نسخة احتياطية أو امسح البيانات من الإعدادات.']};
+const ERR={UNBALANCED:['Entry is not balanced: debit must equal credit','القيد غير متوازن: المدين لا يساوي الدائن'],TOO_FEW_LINES:['An entry needs at least two lines','القيد يحتاج سطرين على الأقل'],LINE_ONE_SIDED:['Each line needs an account and exactly one amount (debit or credit)','كل سطر يحتاج حساب ومبلغ واحد فقط (مدين أو دائن)'],ZERO_ENTRY:['Entry total is zero','إجمالي القيد صفر'],ALREADY_POSTED:['Entry is already posted','القيد مرحّل بالفعل'],PERIOD_CLOSED:['This fiscal period is closed','الفترة المحاسبية مغلقة'],NO_PERIOD:['No fiscal period for this date','لا توجد فترة محاسبية لهذا التاريخ'],DUPLICATE_SOURCE:['A posted entry already exists for this source document','يوجد قيد مرحّل لنفس المستند'],ACCOUNT_NOT_POSTABLE:['This account is a group; post to a sub-account','هذا الحساب مجموعة؛ رحّل على حساب فرعي'],ACCOUNT_INACTIVE:['Account is inactive','الحساب متوقف'],ACCOUNT_NOT_FOUND:['Select an account for every line','اختر حسابًا لكل سطر'],BAD_AMOUNT:['Invalid amount','مبلغ غير صالح'],TOO_MANY_DECIMALS:['At most 2 decimal places','خانتان عشريتان كحد أقصى'],BAD_DATE:['Invalid date','تاريخ غير صالح'],NEGATIVE_AMOUNT:['Amounts cannot be negative','لا يُسمح بمبالغ سالبة'],NO_LINES:['Add at least two lines','أضف سطرين على الأقل'],
+PENDING_ENTRIES:['Post or delete all draft entries of this year first','رحّل أو احذف كل المسودات لهذه السنة أولًا'],TB_UNBALANCED:['Trial balance is not balanced; cannot close','ميزان المراجعة غير متوازن؛ لا يمكن الإقفال'],YEAR_ALREADY_CLOSED:['Year is already closed','السنة مقفلة بالفعل'],PREVIOUS_YEAR_OPEN:['Close the previous year first','أقفل السنة السابقة أولًا'],RE_ACCOUNT_INVALID:['Retained earnings account 3200 is missing or inactive','حساب الأرباح المحتجزة 3200 غير موجود أو متوقف'],REASON_REQUIRED:['A reason is required','السبب مطلوب'],ALREADY_REVERSED:['Entry is already reversed','القيد معكوس بالفعل'],CANNOT_REVERSE_REVERSAL:['A reversal cannot be reversed','لا يمكن عكس قيد عكسي'],IMMUTABLE:['Posted entries cannot be edited; use a reversal','لا يمكن تعديل قيد مرحّل؛ استخدم قيدًا عكسيًا'],YEAR_CLOSED:['Year is closed; reopen the year instead','السنة مقفلة؛ أعد فتح السنة'],
+ACCOUNT_EXISTS:['Account code already exists','كود الحساب مستخدم'],ACCOUNT_HAS_ACTIVITY:['Account has entries; deactivate it instead','عليه قيود؛ أوقفه بدلًا من حذفه'],ACCOUNT_HAS_CHILDREN:['Account has sub-accounts','الحساب له حسابات فرعية'],PARENT_TYPE_MISMATCH:['Parent account has a different type','الحساب الأب من نوع مختلف'],PARENT_HAS_ACTIVITY:['Parent account already has posted entries','الحساب الأب عليه قيود مرحّلة'],ACCOUNT_REQUIRED:['Code and name are required','الكود والاسم مطلوبان'],LATER_YEAR_CLOSED:['Reopen the later year first','أعد فتح السنة اللاحقة أولًا'],INTEGRITY:[D.badFile[0],D.badFile[1]]};
+let L,ST,YR=new Date().getFullYear(),page='dash',EDIT=0,EF='all',TS='raw',TD=false,RT='is',RF='',RTo='',LA='',LF='',LTo='',noSave=false;
+const LNG=()=>ST.lang==='ar'?1:0,t=k=>(D[k]||[k,k])[LNG()];
+const ME=()=>({id:(ST&&ST.acct)||'owner',role:'admin'});
+const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const today=()=>new Date().toISOString().slice(0,10);
+function fresh(){const l=new Ledger({company:'Company',retainedEarnings:'3200'}),A=ME();l.openFiscalYear(A,new Date().getFullYear());DEF.forEach(a=>l.addAccount(A,{code:a[0],name:a[1],nameAr:a[2],type:a[3],parent:a[4],subtype:a[5],postable:!a[6]}));return l}
+function init(){let d=null;try{d=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+ ST=Object.assign({lang:'en',cur:'USD',dd:2,theme:'auto',size:'m',co:'',acct:'Abdelazeem Mandour',wm:true,wmo:11,lockLeave:false,pw:''},d&&d.settings);
+ if(d&&d.ledger){try{L=Ledger.fromJSON(d.ledger)}catch(e){noSave=true}}
+ if(!L)L=fresh();}
+function persist(){if(noSave)return;try{localStorage.setItem(KEY,JSON.stringify({ledger:L.toJSON(),settings:ST}))}catch(e){}}
+function run(fn){try{const r=fn();persist();return r===undefined?true:r}catch(e){if(e instanceof AccountingError){const m=ERR[e.code];alert(m?m[LNG()]:e.message)}else{console.error(e);alert(String(e.message||e))}return null}}
+function ensureYear(y){if(!L.s.years[y])L.openFiscalYear(ME(),y)}
+const accts=()=>Object.values(L.s.accounts).sort((a,b)=>a.code.localeCompare(b.code)),nm=a=>a?(ST.lang==='ar'&&a.nameAr?a.nameAr:a.name):'?';
+const fmt=n=>{const neg=n<0;n=Math.abs(n);let s=ST.dd==0?String(Math.round(n/100)):L.f(n);const p=s.split('.');return(neg?'-':'')+p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',')+(p[1]?'.'+p[1]:'')};
+const sym=()=>(CUR.find(c=>c[0]===ST.cur)||CUR[0])[1],mny=n=>sym()+' '+fmt(n),z=n=>n?fmt(n):'';
 const tr=(a,b,c='')=>`<tr class="${c}"><td>${a}</td><td>${b}</td></tr>`;
-const hdr=()=>`<p class="m">${S.settings.co?esc(S.settings.co)+' · ':''}${t('prep')}: ${esc(S.settings.acct)} · ${new Date().toLocaleDateString('en-GB')}</p>`;
-function bal(st){const m={};S.accounts.forEach(a=>m[a.code]={d:0,c:0});S.entries.forEach(e=>{if(KINDS[st].includes(e.kind))e.lines.forEach(l=>{if(m[l.acc]){m[l.acc].d+=l.d;m[l.acc].c+=l.c}})});return m}
-function apply(){const s=S.settings,r=document.documentElement;r.lang=s.lang;r.dir=s.lang==='ar'?'rtl':'ltr';if(s.theme==='auto')r.removeAttribute('data-theme');else r.dataset.theme=s.theme;r.style.setProperty('--z',{s:.9,m:1,l:1.12}[s.size]);r.style.setProperty('--wmo',s.wmo/100);$('#wm').style.display=s.wm?'':'none';$('#sub').textContent=t('sub');document.title=t('sub')+' – Abdelazeem Mandour'}
-function go(x){tab=x;show();scrollTo(0,0)}
-function show(){$('#app').innerHTML=V[tab]();$('#nav').innerHTML=TABS.map(x=>`<button class="${x[0]===tab?'on':''}" onclick="go('${x[0]}')"><i>${x[1]}</i>${t(x[0])}</button>`).join('');if(tab==='entries'){addLine();addLine()}}
+const yearOpts=()=>Object.keys(L.s.years).sort().map(y=>`<option ${+y===YR?'selected':''}>${y}</option>`).join('');
+const hdr=()=>`<p class="m">${ST.co?esc(ST.co)+' · ':''}${t('prep')}: ${esc(ST.acct)} · ${today()}</p>`;
+const stag=e=>e.status==='draft'?t('draft'):e.reversalOf?t('reversal'):e.reversedBy?t('reversed'):t('posted');
+const srcTxt=s=>s?`${D['st_'+s.type]?t('st_'+s.type):esc(s.type)} #${esc(s.id)}`:'';
 
-/* Entries */
-function vEntries(){
- const list=sorted(),num=new Map(list.map((e,i)=>[e.id,i+1]));
- return `<div class="card"><h2>${t('newEntry')}</h2><div class="row"><input type="date" id="ed" value="${new Date().toISOString().slice(0,10)}"><select id="ek"><option value="regular">${t('regular')}</option><option value="adjusting">${t('adjusting')}</option></select></div>
- <input id="edesc" placeholder="${t('desc')}"><div id="lines"></div><button class="ghost" onclick="addLine()">${t('addLine')}</button><div id="tot" class="tot"></div><div id="err" class="err"></div>
- <button class="primary" onclick="saveEntry()">${t('saveEntry')}</button></div><h2 class="sec">${t('journal')} (${list.length})</h2>`+
- (list.length?[...list].reverse().map(e=>`<div class="card"><div class="eh"><b>#${num.get(e.id)} · ${e.date}</b><span class="tag">${t(e.kind)}</span><button class="x" onclick="delEntry(${e.id})">${t('del')}</button></div><p class="m">${esc(e.desc)}</p><table>${e.lines.map(l=>`<tr><td>${esc(nm(acc(l.acc)||{name:l.acc}))}</td><td>${l.d?fmt(l.d):''}</td><td>${l.c?fmt(l.c):''}</td></tr>`).join('')}</table></div>`).join(''):`<p class="m">${t('none')}</p>`);
-}
-function addLine(){const d=document.createElement('div');d.className='ln';d.innerHTML=`<select>${opts()}</select><input type="number" inputmode="decimal" min="0" step="any" placeholder="${t('dr')}"><input type="number" inputmode="decimal" min="0" step="any" placeholder="${t('cr')}">`;d.oninput=tot;$('#lines').append(d);tot()}
-function tot(){let a=0,b=0;document.querySelectorAll('.ln').forEach(r=>{a+=+r.children[1].value||0;b+=+r.children[2].value||0});const ok=Math.abs(a-b)<.005&&a>0;$('#tot').innerHTML=`${t('dr')}: <b>${fmt(a)}</b> — ${t('cr')}: <b>${fmt(b)}</b> <span class="${ok?'ok':'bad'}">${ok?'✓ '+t('bal'):t('unbal')}</span>`}
-function saveEntry(){
- const err=m=>{$('#err').textContent=m},lines=[...document.querySelectorAll('.ln')].map(r=>({acc:r.children[0].value,d:+r.children[1].value||0,c:+r.children[2].value||0})).filter(l=>l.acc||l.d||l.c);
- const a=lines.reduce((s,l)=>s+l.d,0),b=lines.reduce((s,l)=>s+l.c,0);
- if(!$('#edesc').value.trim())return err(t('eDesc'));
- if(lines.length<2)return err(t('eLines'));
- if(lines.some(l=>!l.acc||l.d<0||l.c<0||(l.d>0)===(l.c>0)))return err(t('eLine'));
- if(Math.abs(a-b)>.005)return err(t('eBal'));
- S.entries.push({id:Date.now(),date:$('#ed').value,desc:$('#edesc').value.trim(),kind:$('#ek').value,lines});save();show();
-}
-function delEntry(id){if(confirm(t('cDel'))){S.entries=S.entries.filter(e=>e.id!==id);save();show()}}
+function apply(){const r=document.documentElement;r.lang=ST.lang;r.dir=ST.lang==='ar'?'rtl':'ltr';if(ST.theme==='auto')r.removeAttribute('data-theme');else r.dataset.theme=ST.theme;r.style.setProperty('--z',{s:.9,m:1,l:1.12}[ST.size]);r.style.setProperty('--wmo',ST.wmo/100);$('#wm').style.display=ST.wm?'':'none';$('#sub').textContent=t('sub');$('#lb').textContent=ST.lang==='ar'?'EN':'ع';document.title=t('sub')+' – Abdelazeem Mandour'}
+const NAV=[['dash','🏠'],['entries','📒'],['coa','🗂️'],['ledger','📖'],['tb','⚖️'],['reports','📊'],['cycle','🔄'],['audit','🛡️'],['settings','⚙️']];
+function go(p){page=p;document.body.classList.remove('menu');show();scrollTo(0,0)}
+function show(){apply();$('#side').innerHTML=`<div class="br"><div class="logo">AM</div><b>Abdelazeem Mandour</b></div>`+NAV.map(n=>`<button class="${n[0]===page?'on':''}" onclick="go('${n[0]}')"><span>${n[1]}</span>${t(n[0])}</button>`).join('');
+ $('#app').innerHTML=(noSave?`<div class="warn">${t('corrupt')}</div>`:'')+V[page]();if(page==='entries')initLines()}
 
-/* Accounts */
-const TY=['asset','liability','equity','revenue','expense'];
-function vAccounts(){
- return `<div class="card"><h2>${t('addAcc')}</h2><div class="row"><input id="nc" placeholder="${t('code')}" inputmode="numeric"><select id="nt">${TY.map(x=>`<option value="${x}">${t(x)}</option>`).join('')}</select></div><input id="nn" placeholder="${t('aname')}"><button class="primary" onclick="addAcc()">${t('add')}</button></div>`+
- TY.map(x=>`<div class="card"><h2>${t(x)}</h2><table>${S.accounts.filter(a=>a.type===x).map(a=>`<tr><td>${a.code} – ${esc(nm(a))}</td><td><button class="x" onclick="delAcc('${a.code}')">${t('del')}</button></td></tr>`).join('')}</table></div>`).join('');
-}
-function addAcc(){const code=$('#nc').value.trim(),name=$('#nn').value.trim();if(!code||!name)return alert(t('eCodeName'));if(acc(code))return alert(t('eUsed'));S.accounts.push({code,name,ar:name,type:$('#nt').value});S.accounts.sort((a,b)=>a.code.localeCompare(b.code));save();show()}
-function delAcc(c){if(S.entries.some(e=>e.lines.some(l=>l.acc===c)))return alert(t('eAct'));S.accounts=S.accounts.filter(a=>a.code!==c);save();show()}
+/* ---------- Dashboard ---------- */
+function steps(y){const from=y+'-01-01',to=y+'-12-31',es=L.listEntries({from,to}).filter(e=>e.status==='posted'&&!e.reversalOf),c=k=>es.filter(e=>e.kind===k).length,yr=L.s.years[y]||{status:'open'};
+ const raw=L.trialBalance({from,to,stage:'unadjusted'}),adj=L.trialBalance({from,to,stage:'adjusted'}),cl=yr.status==='closed',n=k=>c(k)+' '+t('ent');
+ return[['s1',es.length>0||cl,t('manual')],['s2',c('regular')+c('opening')>0,n('regular')],['s3',es.length>0,t('auto')],['s4',raw.balanced&&raw.rows.length>0,t('auto')],['s5',c('adjusting')>0,n('adjusting')],['s6',adj.balanced&&adj.rows.length>0,t('auto')],['s7',adj.rows.length>0,t('auto')],['s8',cl,n('closing')],['s9',cl,t('auto')]]}
+function chart(y){const mo=[];for(let m=1;m<=12;m++){const mm=String(m).padStart(2,'0'),last=new Date(Date.UTC(y,m,0)).getUTCDate(),q=L.incomeStatement({from:`${y}-${mm}-01`,to:`${y}-${mm}-${last}`}).totals,r=q.revenue+q.otherIncome;mo.push([r,r-q.netIncome])}
+ const mx=Math.max(1,...mo.flat());let g='';mo.forEach((v,i)=>{const x=10+i*28,h1=v[0]/mx*110,h2=v[1]/mx*110;g+=`<rect x="${x}" y="${125-h1}" width="10" height="${h1}" rx="2" fill="#c9a24b"/><rect x="${x+11}" y="${125-h2}" width="10" height="${h2}" rx="2" fill="#5b7fb8"/><text x="${x+10}" y="140" font-size="9" text-anchor="middle" fill="currentColor" opacity=".6">${i+1}</text>`});
+ return`<svg viewBox="0 0 346 146" width="100%" role="img" aria-label="${t('chartT')}">${g}</svg><div class="lg"><span><i style="background:#c9a24b"></i>${t('revenue')}</span><span><i style="background:#5b7fb8"></i>${t('expenses')}</span></div>`}
+function vDash(){const y=YR,from=y+'-01-01',to=y+'-12-31',q=L.incomeStatement({from,to}).totals,b=L.balanceSheet({asOf:to}).totals,rev=q.revenue+q.otherIncome,tb=L.trialBalance({from,to,stage:'adjusted'}),st=steps(y),done=st.filter(s=>s[1]).length,dr=L.listEntries({status:'draft'}).length;
+ const k=[['tAs',b.assets],['tLi',b.liabilities],['tEq',b.equity],['revenue',rev],['expenses',rev-q.netIncome],[q.netIncome>=0?'ni':'nl',Math.abs(q.netIncome)]];
+ const rc=L.listEntries().filter(e=>e.status!=='void').sort((a,b)=>b.id-a.id).slice(0,5);
+ return`<div class="card"><div class="row"><div><small class="m">${t('year')}</small><select onchange="YR=+this.value;show()">${yearOpts()}</select></div></div></div>
+ <div class="grid">${k.map(x=>`<div class="kpi"><small>${t(x[0])}</small><b>${mny(x[1])}</b></div>`).join('')}</div>
+ <div class="card"><h2>${t('chartT')}</h2>${chart(y)}</div>
+ <div class="grid"><div class="kpi"><small>${t('tbStatus')}</small><b class="${tb.balanced?'ok':'bad'}">${tb.balanced?t('balOk'):t('balNo')}</b></div><div class="kpi"><small>${t('drafts')}</small><b>${dr}</b></div></div>
+ <div class="card"><h2>${t('progress')} (${done}/9)</h2><div class="bar"><i style="width:${Math.round(done/9*100)}%"></i></div></div>
+ <div class="card"><h2>${t('recent')}</h2>${rc.length?`<table>${rc.map(e=>`<tr><td>${e.number||'#'+e.id} · ${e.date}<br><small>${esc(e.description)}</small></td><td>${fmt(e.lines.reduce((s,l)=>s+l.debit,0))}</td></tr>`).join('')}</table>`:`<p class="m">${t('none')}</p>`}</div>`}
 
-/* Ledger */
-function vLedger(){
- if(!acc(LA))LA=S.accounts[0].code;const a=acc(LA),nat=a.type==='asset'||a.type==='expense'?1:-1;let run=0;
- const rows=sorted().flatMap(e=>e.lines.filter(l=>l.acc===LA).map(l=>{run+=(l.d-l.c)*nat;return`<tr><td>${e.date}<br><small>${esc(e.desc)}</small></td><td>${l.d?fmt(l.d):''}</td><td>${l.c?fmt(l.c):''}</td><td>${fmt(run)}</td></tr>`})).join('');
- return `<div class="card"><h2>${t('gl')}</h2><select onchange="LA=this.value;show()">${S.accounts.map(x=>`<option value="${x.code}" ${x.code===LA?'selected':''}>${x.code} – ${esc(nm(x))}</option>`).join('')}</select><table><tr><th>${t('dd')}</th><th>${t('dr')}</th><th>${t('cr')}</th><th>${t('balance')}</th></tr>${rows||`<tr><td colspan="4">${t('noAct')}</td></tr>`}</table></div>`;
-}
+/* ---------- Entries ---------- */
+function vEntries(){const list=L.listEntries().filter(e=>e.status!=='void'&&(EF==='all'||(EF==='draft')===(e.status==='draft'))).sort((a,b)=>b.id-a.id);
+ return`<div class="card"><h2>${EDIT?t('editEntry'):t('newEntry')}</h2><div class="row"><input type="date" id="ed" value="${today()}"><select id="ek"><option value="regular">${t('regular')}</option><option value="adjusting">${t('adjusting')}</option></select></div>
+ <input id="edesc" placeholder="${t('desc')}"><div class="row"><select id="est">${['manual','invoice','receipt','payroll','bank','other'].map(s=>`<option value="${s}">${t('st_'+s)}</option>`).join('')}</select><input id="edoc" placeholder="${t('docNo')}"></div>
+ <div id="lines"></div><button class="ghost" onclick="addLine()">${t('addLine')}</button><div id="tot" class="tot"></div>
+ <div class="row"><button class="gold" onclick="saveEntry(false)">${t('saveDraft')}</button><button class="primary" style="margin:0" onclick="saveEntry(true)">${t('savePost')}</button></div></div>
+ <h2 class="sec">${t('journal')}</h2><div class="seg">${[['all','all'],['draft','draft'],['posted','posted']].map(f=>`<button class="${EF===f[0]?'on':''}" onclick="EF='${f[0]}';show()">${t(f[1])}</button>`).join('')}</div>`+
+ (list.length?list.map(e=>`<div class="card"><div class="eh"><b>${e.number||'#'+e.id}</b><span>${e.date}</span><span class="tag">${stag(e)}</span><span class="tag">${t(e.kind)}</span></div><p class="m">${esc(e.description)}${e.source?' · '+srcTxt(e.source):''}</p><div class="sc"><table>${e.lines.map(l=>`<tr><td>${l.account} ${esc(nm(L.s.accounts[l.account]))}</td><td>${z(l.debit)}</td><td>${z(l.credit)}</td></tr>`).join('')}</table></div>
+ <div class="eh">${e.status==='draft'?`<button class="lnk" onclick="postDraft(${e.id})">${t('post')}</button><button class="lnk" onclick="EDIT=${e.id};show()">${t('edit')}</button><button class="x sp" onclick="delDraft(${e.id})">${t('del')}</button>`:(!e.reversedBy&&!e.reversalOf?`<button class="lnk" onclick="revEntry(${e.id})">${t('reverse')}</button>`:'')}</div></div>`).join(''):`<p class="m">${t('none')}</p>`)}
+function acctOpts(sel){return`<option value="">${t('pick')}</option>`+accts().filter(a=>a.postable&&a.active).map(a=>`<option value="${a.code}" ${a.code===sel?'selected':''}>${a.code} – ${esc(nm(a))}</option>`).join('')}
+function addLine(a='',d='',c=''){const r=document.createElement('div');r.className='ln';r.innerHTML=`<select>${acctOpts(a)}</select><input type="number" inputmode="decimal" min="0" step="any" placeholder="${t('dr')}" value="${d}"><input type="number" inputmode="decimal" min="0" step="any" placeholder="${t('cr')}" value="${c}"><button class="x" aria-label="remove" onclick="this.parentNode.remove();tot()">✕</button>`;r.oninput=tot;$('#lines').append(r)}
+function initLines(){if(EDIT){const e=L.getEntry(EDIT);$('#ed').value=e.date;$('#ek').value=e.kind==='adjusting'?'adjusting':'regular';$('#edesc').value=e.description;if(e.source){$('#est').value=e.source.type;$('#edoc').value=e.source.id}e.lines.forEach(l=>addLine(l.account,l.debit?L.f(l.debit):'',l.credit?L.f(l.credit):''))}else{addLine();addLine()}tot()}
+function tot(){const v=x=>{try{return L.m(x||0)}catch(e){return NaN}};let a=0,b=0;document.querySelectorAll('.ln').forEach(r=>{a+=v(r.children[1].value);b+=v(r.children[2].value)});const ok=a===b&&a>0;$('#tot').innerHTML=`${t('dr')}: <b>${isNaN(a)?'?':fmt(a)}</b> — ${t('cr')}: <b>${isNaN(b)?'?':fmt(b)}</b> — ${t('diff')}: <b>${isNaN(a-b)?'?':fmt(Math.abs(a-b))}</b> <span class="${ok?'ok':'bad'}">${ok?t('balOk'):t('balNo')}</span>`}
+function saveEntry(post){const rows=[...document.querySelectorAll('.ln')].map(r=>({account:r.children[0].value,debit:r.children[1].value.trim()||0,credit:r.children[2].value.trim()||0,raw:r.children[1].value.trim()+r.children[2].value.trim()})).filter(l=>l.account||l.raw).map(l=>({account:l.account,debit:l.debit,credit:l.credit}));
+ const date=$('#ed').value,doc=$('#edoc').value.trim(),desc=$('#edesc').value.trim();if(!desc)return alert(t('eDesc'));
+ const n=L.s.entries.length,r=run(()=>{const y=+date.slice(0,4);if(y>1900&&y<3000)ensureYear(y);const e=L.createEntry(ME(),{date,description:desc,kind:$('#ek').value,reference:doc,source:doc?{type:$('#est').value,id:doc}:null,lines:rows});if(EDIT){L.deleteDraft(ME(),EDIT);EDIT=0}if(post)L.postEntry(ME(),e.id);return e});
+ if(r||L.s.entries.length!==n)show()}
+function postDraft(id){if(run(()=>L.postEntry(ME(),id)))show()}
+function delDraft(id){if(confirm(t('cDel'))&&run(()=>L.deleteDraft(ME(),id)))show()}
+function revEntry(id){const reason=prompt(t('reasonQ'));if(!reason)return;const date=prompt(t('revDate'),today());if(!date)return;if(run(()=>L.reverseEntry(ME(),id,{reason,date})))show()}
 
-/* Trial balance */
-function setTS(x){TS=x;show()}
-function vTrial(){
- const m=bal(TS);let a=0,b=0;
- const rows=S.accounts.map(x=>{const n=m[x.code].d-m[x.code].c;if(Math.abs(n)<.005)return'';n>0?a+=n:b-=n;return`<tr><td>${x.code} ${esc(nm(x))}</td><td>${n>0?fmt(n):''}</td><td>${n<0?fmt(-n):''}</td></tr>`}).join('');
- const ok=Math.abs(a-b)<.005;
- return `<div class="seg">${['raw','adj','post'].map(x=>`<button class="${TS===x?'on':''}" onclick="setTS('${x}')">${t(x)}</button>`).join('')}</div>
- <div class="card"><h2>${t('tb')}</h2>${hdr()}<table><tr><th>${t('account')}</th><th>${t('dr')}</th><th>${t('cr')}</th></tr>${rows||`<tr><td colspan="3">${t('none')}</td></tr>`}<tr class="t"><td>${t('total')}</td><td>${mny(a)}</td><td>${mny(b)}</td></tr></table><p class="tot ${ok?'ok':'bad'}">${t(ok?'tbOk':'tbNo')}</p></div>`;
-}
+/* ---------- Chart of accounts ---------- */
+function vCoa(){const s=L._sum(()=>true),A=accts(),bal={};A.forEach(a=>{bal[a.code]=a.normal==='debit'?s[a.code].d-s[a.code].c:s[a.code].c-s[a.code].d});
+ const depth=a=>{let d=0,p=a.parent;while(p){d++;p=L.s.accounts[p]&&L.s.accounts[p].parent}return d};
+ const tot={};A.forEach(a=>{let p=a.code;const v=bal[a.code];while(p){tot[p]=(tot[p]||0)+v;p=L.s.accounts[p]&&L.s.accounts[p].parent}});
+ const tree=[];const walk=(p)=>A.filter(a=>(a.parent||null)===p).forEach(a=>{tree.push(a);walk(a.code)});walk(null);
+ return`<div class="card"><h2>${t('addAcc')}</h2><div class="row"><input id="nc" placeholder="${t('code')}" inputmode="numeric"><select id="nt">${['asset','liability','equity','revenue','expense'].map(x=>`<option value="${x}">${t(x==='revenue'?'revenue2':x)}</option>`).join('')}</select></div><input id="nn" placeholder="${t('aname')}"><input id="na" placeholder="${t('anameAr')}">
+ <select id="np"><option value="">${t('noParent')}</option>${A.filter(a=>a.active).map(a=>`<option value="${a.code}">${a.code} – ${esc(nm(a))}</option>`).join('')}</select><button class="primary" onclick="addAcc()">${t('addAcc')}</button></div>
+ <div class="card sc"><table>${tree.map(a=>`<tr><td style="padding-inline-start:${depth(a)*18+4}px">${a.postable?'':'<b>'}${a.code} ${esc(nm(a))}${a.postable?'':'</b>'} ${a.active?'':`<span class="tag">${t('inactive')}</span>`}</td><td>${fmt(tot[a.code]||0)}</td><td>${a.postable&&a.active?`<button class="x" onclick="deactAcc('${a.code}')">${t('deact')}</button>`:''}<button class="x" onclick="delAcc('${a.code}')">${t('del')}</button></td></tr>`).join('')}</table></div>`}
+function addAcc(){const p=$('#np').value,ty=p?L.s.accounts[p].type:$('#nt').value;if(run(()=>L.addAccount(ME(),{code:$('#nc').value.trim(),name:$('#nn').value.trim()||$('#na').value.trim(),nameAr:$('#na').value.trim(),type:ty,parent:p||null})))show()}
+function deactAcc(c){if(run(()=>L.deactivateAccount(ME(),c)))show()}
+function delAcc(c){if(run(()=>L.deleteAccount(ME(),c)))show()}
 
-/* Reports */
-function vReports(){
- const m=bal('adj'),p=bal('post'),n=(x,a)=>x[a.code].d-x[a.code].c,sum=r=>r.reduce((s,x)=>s+x[1],0);
- const pick=(ty,sg,x)=>S.accounts.filter(a=>a.type===ty).map(a=>[nm(a),sg*n(x,a)]).filter(r=>Math.abs(r[1])>.004);
- const rows=r=>r.map(x=>tr(esc(x[0]),mny(x[1]))).join('');
- const rev=pick('revenue',-1,m),exp=pick('expense',1,m),NI=sum(rev)-sum(exp);
- const as=pick('asset',1,p),li=pick('liability',-1,p),eq=pick('equity',-1,p),open=sum(pick('revenue',-1,p))-sum(pick('expense',1,p));
- if(Math.abs(open)>.004)eq.push([t('niOpen'),open]);
- const A=sum(as),L=sum(li)+sum(eq),ok=Math.abs(A-L)<.005;
- return `<div class="card"><h2>${t('is')}</h2>${hdr()}<table>${rows(rev)}${tr(t('tRev'),mny(sum(rev)),'t')}${rows(exp)}${tr(t('tExp'),mny(sum(exp)),'t')}${tr(t(NI>=0?'ni':'nl'),mny(Math.abs(NI)),'g')}</table></div>
- <div class="card"><h2>${t('bs')}</h2>${hdr()}<table>${rows(as)}${tr(t('tAs'),mny(A),'t g')}${rows(li)}${tr(t('tLi'),mny(sum(li)),'t')}${rows(eq)}${tr(t('tEq'),mny(sum(eq)),'t')}${tr(t('tLE'),mny(L),'t g')}</table><p class="tot ${ok?'ok':'bad'}">${t(ok?'eqOk':'eqNo')}</p></div>`;
-}
+/* ---------- Ledger ---------- */
+function vLedger(){const A=accts();if(!LA||!L.s.accounts[LA])LA=(A.find(a=>a.postable)||A[0]).code;const r=L.ledger(LA,{from:LF||undefined,to:LTo||undefined});
+ return`<div class="card"><h2>${t('gl')}</h2><select onchange="LA=this.value;show()">${A.map(a=>`<option value="${a.code}" ${a.code===LA?'selected':''}>${a.code} – ${esc(nm(a))}</option>`).join('')}</select>
+ <div class="row"><input type="date" value="${LF}" onchange="LF=this.value;show()" aria-label="${t('from')}"><input type="date" value="${LTo}" onchange="LTo=this.value;show()" aria-label="${t('to')}"></div>
+ <div class="sc"><table><tr><th>${t('dd')}</th><th>${t('dr')}</th><th>${t('cr')}</th><th>${t('balance')}</th></tr>${LF?`<tr><td>${t('openBal')}</td><td></td><td></td><td>${fmt(r.opening)}</td></tr>`:''}${r.rows.map(x=>`<tr><td>${x.date} · ${x.number}<br><small>${esc(x.description)}</small></td><td>${z(x.debit)}</td><td>${z(x.credit)}</td><td>${fmt(x.balance)}</td></tr>`).join('')||`<tr><td colspan="4">${t('noAct')}</td></tr>`}</table></div></div>`}
 
-/* Cycle & closing */
-function vCycle(){
- const c=k=>S.entries.filter(e=>e.kind===k).length,n=k=>c(k)+' '+t('ent');
- const st=[['s1',t('manual')],['s2',n('regular')],['s3',t('auto')],['s4',t('auto')],['s5',n('adjusting')],['s6',t('auto')],['s7',t('auto')],['s8',n('closing')],['s9',t('auto')]];
- return `<div class="card"><h2>${t('cycleT')}</h2>${st.map(s=>`<div class="st"><span>${t(s[0])}</span><span class="tag">${s[1]}</span></div>`).join('')}</div>
- <div class="card"><h2>${t('closeT')}</h2><p class="m">${t('closeP')}</p><button class="primary" onclick="closeBooks()">${t('runClose')}</button><button class="ghost" style="margin-top:8px" onclick="undoClose()">${t('undoClose')}</button></div>`;
-}
-function closeBooks(){
- const p=bal('post'),lines=[];let x=0;
- S.accounts.forEach(a=>{if(a.type!=='revenue'&&a.type!=='expense'&&a.code!=='3102')return;const n=p[a.code].d-p[a.code].c;if(Math.abs(n)<.005)return;const amt=-n;lines.push(amt>0?{acc:a.code,d:amt,c:0}:{acc:a.code,d:0,c:-amt});x+=amt});
- if(!lines.length)return alert(t('nothing'));
- if(!acc('3101'))return alert(t('noCap'));
- lines.push(x>0?{acc:'3101',d:0,c:x}:{acc:'3101',d:-x,c:0});
- S.entries.push({id:Date.now(),date:new Date().toISOString().slice(0,10),desc:t('closeDesc'),kind:'closing',lines});save();show();
-}
-function undoClose(){S.entries=S.entries.filter(e=>e.kind!=='closing');save();show()}
+/* ---------- Trial balance ---------- */
+function vTb(){const from=RF||YR+'-01-01',to=RTo||YR+'-12-31',stg={raw:'unadjusted',adj:'adjusted',post2:'postClosing'}[TS];
+ const rr=L.trialBalance({from,to,stage:stg}),RT_=rr.totals,det=TD&&TS!=='post2';
+ return`<div class="seg">${['raw','adj','post2'].map(x=>`<button class="${TS===x?'on':''}" onclick="TS='${x}';show()">${t(x)}</button>`).join('')}</div>
+ <div class="card"><h2>${t('tb')}</h2>${hdr()}<div class="row"><input type="date" value="${from}" onchange="RF=this.value;show()"><input type="date" value="${to}" onchange="RTo=this.value;show()"></div>
+ <label class="m"><input type="checkbox" style="width:auto;margin-inline-end:6px" ${TD?'checked':''} onchange="TD=this.checked;show()">${t('detailed')}</label>
+ <div class="sc"><table><tr><th>${t('account')}</th>${det?`<th>${t('openC')} ${t('dr')}</th><th>${t('openC')} ${t('cr')}</th><th>${t('movC')} ${t('dr')}</th><th>${t('movC')} ${t('cr')}</th>`:''}<th>${t('dr')}</th><th>${t('cr')}</th></tr>
+ ${rr.rows.map(x=>`<tr><td>${x.code} ${esc(nm(L.s.accounts[x.code]))}</td>${det?`<td>${z(x.openDr)}</td><td>${z(x.openCr)}</td><td>${z(x.movDr)}</td><td>${z(x.movCr)}</td>`:''}<td>${z(x.closeDr)}</td><td>${z(x.closeCr)}</td></tr>`).join('')||`<tr><td colspan="3">${t('none')}</td></tr>`}
+ <tr class="t"><td>${t('total')}</td>${det?`<td>${fmt(RT_.openDr)}</td><td>${fmt(RT_.openCr)}</td><td>${fmt(RT_.movDr)}</td><td>${fmt(RT_.movCr)}</td>`:''}<td>${mny(RT_.closeDr)}</td><td>${mny(RT_.closeCr)}</td></tr></table></div>
+ <p class="tot ${rr.balanced?'ok':'bad'}">${rr.balanced?t('balOk'):t('balNo')+' ('+fmt(rr.difference)+')'}</p>
+ <div class="row noprint"><button class="gold" onclick="csv('trial-balance.csv',[['Code','Account','Debit','Credit']].concat(L.trialBalance({from:'${from}',to:'${to}',stage:'${stg}'}).rows.map(x=>[x.code,L.s.accounts[x.code].name,L.f(x.closeDr),L.f(x.closeCr)])))">${t('csv')}</button><button class="gold" onclick="print()">${t('print')}</button></div></div>`}
 
-/* Settings */
-function setS(k,v){S.settings[k]=v;save();apply();show()}
-function vSettings(){
- const s=S.settings,row=(l,c)=>`<div class="set"><span>${l}</span>${c}</div>`,
+/* ---------- Reports ---------- */
+function csv(name,rows){const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';dl(name,new Blob(['\ufeff'+rows.map(r=>r.map(q).join(',')).join('\n')],{type:'text/csv'}))}
+function dl(name,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click()}
+let CSVROWS=[];
+function repIS(from,to){const r=L.incomeStatement({from,to}),T=r.totals;CSVROWS=[];const row=(l,v,c)=>{CSVROWS.push([l,L.f(v)]);return tr(l,mny(v),c)},det=a=>a.map(x=>row(x.code+' '+esc(nm(L.s.accounts[x.code])),x.amount)).join('');
+ return`<table>${det(r.revenue)}${row(t('tRev'),T.revenue,'t')}${det(r.cogs)}${row(t('cogs'),T.cogs,'t')}${row(t('gp'),T.grossProfit,'g')}${det(r.opex)}${row(t('opex'),T.opex,'t')}${row(t('op'),T.operatingProfit,'t')}${det(r.otherIncome)}${row(t('oi'),T.otherIncome)}${det(r.finance)}${row(t('fin'),T.finance)}${row(t('pbt'),T.profitBeforeTax,'t')}${det(r.tax)}${row(t('tax'),T.tax)}${row(t(T.netIncome>=0?'ni':'nl'),Math.abs(T.netIncome),'g')}</table>`}
+function repBS(to){const r=L.balanceSheet({asOf:to}),T=r.totals;CSVROWS=[];const row=(l,v,c)=>{CSVROWS.push([l,L.f(v)]);return tr(l,mny(v),c)},det=a=>a.map(x=>row(x.code+' '+esc(nm(L.s.accounts[x.code])),x.amount)).join('');
+ return`<table>${tr('<b>'+t('curAs')+'</b>','')}${det(r.assets.current)}${tr('<b>'+t('ncAs')+'</b>','')}${det(r.assets.noncurrent)}${row(t('tAs'),T.assets,'t g')}${tr('<b>'+t('curLi')+'</b>','')}${det(r.liabilities.current)}${tr('<b>'+t('ncLi')+'</b>','')}${det(r.liabilities.noncurrent)}${row(t('tLi'),T.liabilities,'t')}${tr('<b>'+t('eqS')+'</b>','')}${det(r.equity)}${row(t('curRes'),T.currentResult)}${row(t('tEq'),T.equity,'t')}${row(t('tLE'),T.liabilitiesAndEquity,'t g')}</table><p class="tot ${r.balanced?'ok':'bad'}">${t(r.balanced?'eqOk':'eqNo')}</p>`}
+function repJ(from,to,kind){const es=L.listEntries({status:'posted',from,to}).filter(e=>!kind||e.kind===kind).sort((a,b)=>a.date.localeCompare(b.date)||a.id-b.id);CSVROWS=[['Number','Date','Type','Description','Source','Code','Account','Debit','Credit']];let D_=0,C_=0;
+ const h=es.map(e=>{e.lines.forEach(l=>{D_+=l.debit;C_+=l.credit;CSVROWS.push([e.number,e.date,e.kind,e.description,e.source?e.source.type+' #'+e.source.id:'',l.account,L.s.accounts[l.account].name,L.f(l.debit),L.f(l.credit)])});
+  return`<div style="margin-bottom:10px"><div class="eh"><b>${e.number}</b><span>${e.date}</span><span class="tag">${t(e.kind)}</span></div><p class="m">${esc(e.description)}${e.source?' · '+srcTxt(e.source):''}</p><table>${e.lines.map(l=>`<tr><td>${l.account} ${esc(nm(L.s.accounts[l.account]))}</td><td>${z(l.debit)}</td><td>${z(l.credit)}</td></tr>`).join('')}</table></div>`}).join('');
+ return es.length?h+`<table>${tr(t('totals'),'')}<tr class="t"><td>${t('dr')} / ${t('cr')}</td><td>${mny(D_)}</td><td>${mny(C_)}</td></tr></table>`:`<p class="m">${t('none')}</p>`}
+function vReports(){const from=RF||YR+'-01-01',to=RTo||YR+'-12-31',T=[['is','is'],['bs','bs'],['jb','jb'],['adj','ar'],['cls','cr2']];
+ const body=RT==='is'?repIS(from,to):RT==='bs'?repBS(to):RT==='jb'?repJ(from,to,''):RT==='adj'?repJ(from,to,'adjusting'):repJ(from,to,'closing');
+ return`<div class="seg">${T.map(x=>`<button class="${RT===x[0]?'on':''}" onclick="RT='${x[0]}';show()">${t(x[1])}</button>`).join('')}</div>
+ <div class="card"><h2>${t({is:'is',bs:'bs',jb:'jb',adj:'ar',cls:'cr2'}[RT])}</h2>${hdr()}<div class="row noprint">${RT!=='bs'?`<input type="date" value="${from}" onchange="RF=this.value;show()">`:''}<input type="date" value="${to}" onchange="RTo=this.value;show()"></div><div class="sc">${body}</div>
+ <div class="row noprint"><button class="gold" onclick="csv('${RT}-report.csv',CSVROWS)">${t('csv')}</button><button class="gold" onclick="print()">${t('print')}</button></div></div>`}
+
+/* ---------- Cycle ---------- */
+function vCycle(){const y=YR,yr=L.s.years[y]||{status:'open'},st=steps(y),ps=Object.values(L.s.periods).filter(p=>p.year===y).sort((a,b)=>a.id.localeCompare(b.id));
+ return`<div class="card"><div class="row"><select onchange="YR=+this.value;show()">${yearOpts()}</select><button class="gold" onclick="addYear()">${t('addYear')}</button></div></div>
+ <div class="card"><h2>${t('cycleT')||t('cycle')}</h2>${st.map(s=>`<div class="st"><span>${s[1]?'✅':'⬜'} ${t(s[0])}</span><span class="tag">${s[2]}</span></div>`).join('')}</div>
+ <div class="card"><h2>${t('closeYear')} ${y}</h2><p class="m">${t('closeNote')}</p>${yr.status==='closed'?`<button class="ghost" onclick="reopenYr()">${t('reopenYear')}</button>`:`<button class="primary" onclick="closeYr()">${t('closeYear')}</button>`}</div>
+ <div class="card"><h2>${t('periods')}</h2><table>${ps.map(p=>`<tr><td>${p.id}</td><td><span class="tag">${t(p.status==='open'?'open':'closed')}</span></td><td>${yr.status==='closed'?'':p.status==='open'?`<button class="x" onclick="perClose('${p.id}')">${t('closeP')}</button>`:`<button class="lnk" onclick="perOpen('${p.id}')">${t('reopenP')}</button>`}</td></tr>`).join('')}</table></div>`}
+D.cycleT=D.cycle;
+function addYear(){const ys=Object.keys(L.s.years).map(Number),n=Math.max(...ys)+1;if(run(()=>ensureYear(n))){YR=n;show()}}
+function closeYr(){if(confirm(t('cClose'))&&run(()=>L.closeYear(ME(),{year:YR})))show()}
+function reopenYr(){const r=prompt(t('reasonQ'));if(r&&run(()=>L.reopenYear(ME(),{year:YR,reason:r})))show()}
+function perClose(id){if(run(()=>L.closePeriod(ME(),id)))show()}
+function perOpen(id){const r=prompt(t('reasonQ'));if(r&&run(()=>L.reopenPeriod(ME(),id,r)))show()}
+
+/* ---------- Audit ---------- */
+function vAudit(){const rep=L.integrityReport(),a=[...L.s.audit].reverse().slice(0,300);
+ return`<div class="card"><h2>${t('integrity')}</h2><p class="tot ${rep.ok?'ok':'bad'}">${rep.ok?t('intOk'):t('intBad')+' ('+rep.problems.length+')'}</p></div>
+ <div class="card sc"><h2>${t('auditT')}</h2><table><tr><th>${t('time')}</th><th>${t('user')}</th><th>${t('action')}</th><th>${t('ref')}</th></tr>${a.map(r=>`<tr><td>${esc(r.ts.slice(0,19).replace('T',' '))}</td><td>${esc(r.user)}</td><td>${esc(r.action)}</td><td>${esc(r.ref)}</td></tr>`).join('')||`<tr><td colspan="4">${t('none')}</td></tr>`}</table></div>`}
+
+/* ---------- Settings ---------- */
+function setS(k,v){ST[k]=v;persist();show()}
+function vSettings(){const s=ST,row=(l,c)=>`<div class="set"><span>${l}</span>${c}</div>`,
  sel=(k,o)=>`<select onchange="setS('${k}',this.value)">${o.map(x=>`<option value="${x[0]}" ${String(s[k])===String(x[0])?'selected':''}>${x[1]}</option>`).join('')}</select>`,
- chk=k=>`<input type="checkbox" ${s[k]?'checked':''} onchange="setS('${k}',this.checked)">`,
- txt=k=>`<input class="ti" value="${esc(s[k])}" onchange="setS('${k}',this.value)">`;
- return `<div class="card"><h2>${t('general')}</h2>${row(t('language'),sel('lang',[['en','English'],['ar','العربية']]))}${row(t('currency'),sel('cur',CUR.map(c=>[c[0],c[0]+' ('+c[1]+')'])))}${row(t('decimals'),sel('dec',[[0,'0'],[2,'2'],[3,'3']]))}${row(t('theme'),sel('theme',[['auto',t('auto2')],['light',t('light')],['dark',t('dark')]]))}${row(t('tsize'),sel('size',[['s',t('small')],['m',t('medium')],['l',t('large')]]))}</div>
+ chk=k=>`<input type="checkbox" ${s[k]?'checked':''} onchange="setS('${k}',this.checked)">`,txt=k=>`<input class="ti" value="${esc(s[k])}" onchange="setS('${k}',this.value)">`;
+ return`<div class="card"><h2>${t('general')}</h2>${row(t('language'),sel('lang',[['en','English'],['ar','العربية']]))}${row(t('currency'),sel('cur',CUR.map(c=>[c[0],c[0]+' ('+c[1]+')'])))}${row(t('decimals'),sel('dd',[[0,'0'],[2,'2']]))}${row(t('theme'),sel('theme',[['auto',t('auto2')],['light',t('light')],['dark',t('dark')]]))}${row(t('tsize'),sel('size',[['s',t('small')],['m',t('medium')],['l',t('large')]]))}</div>
  <div class="card"><h2>${t('company')}</h2>${row(t('coName'),txt('co'))}${row(t('prepBy'),txt('acct'))}</div>
  <div class="card"><h2>${t('security')}</h2><p class="m">${s.pw?t('pwOn'):t('pwOff')}</p>${s.pw?`<input type="password" id="pc" placeholder="${t('curPw')}">`:''}<input type="password" id="pn" placeholder="${t('newPw')}"><input type="password" id="pn2" placeholder="${t('confPw')}"><button class="primary" onclick="setPw()">${t('savePw')}</button>${s.pw?`<button class="ghost" style="margin-top:8px" onclick="rmPw()">${t('rmPw')}</button><button class="ghost" onclick="lock()">${t('lockNow')}</button>${row(t('lockLeave'),chk('lockLeave'))}`:''}</div>
- <div class="card"><h2>${t('look')}</h2>${row(t('wmShow'),chk('wm'))}<div class="set"><span>${t('wmStr')}</span><input type="range" min="4" max="30" value="${s.wmo}" oninput="S.settings.wmo=+this.value;apply()" onchange="save()"></div></div>
- <div class="card"><h2>${t('data')}</h2><p class="m">${t('dataP')}</p><div class="row"><button class="gold" onclick="exportData()">${t('backup')}</button><button class="gold" onclick="$('#imp').click()">${t('restore')}</button><button class="gold" onclick="exportCSV()">${t('csv')}</button><button class="gold" onclick="print()">${t('print')}</button></div><input type="file" id="imp" accept=".json" hidden onchange="importData(this.files[0])"><button class="x" style="margin-top:10px" onclick="resetAll()">${t('reset')}</button></div>
- <div class="card" style="text-align:center"><h2>${t('about')}</h2><div class="logo big" style="margin:8px auto">AM</div><b style="font-family:Georgia,serif">Abdelazeem Mandour</b><p class="m">${t('sub')} · v2.0</p></div>`;
-}
+ <div class="card"><h2>${t('look')}</h2>${row(t('wmShow'),chk('wm'))}<div class="set"><span>${t('wmStr')}</span><input type="range" min="4" max="30" value="${s.wmo}" oninput="ST.wmo=+this.value;apply()" onchange="persist()"></div></div>
+ <div class="card"><h2>${t('data')}</h2><p class="m">${t('dataP')}</p><div class="row"><button class="gold" onclick="exportData()">${t('backup')}</button><button class="gold" onclick="$('#imp').click()">${t('restore')}</button><button class="gold" onclick="checkInt()">${t('check')}</button></div><input type="file" id="imp" accept=".json" hidden onchange="importData(this.files[0])"><button class="x" style="margin-top:10px" onclick="resetAll()">${t('reset')}</button></div>
+ <div class="card" style="text-align:center"><h2>${t('about')}</h2><div class="logo big" style="margin:8px auto">AM</div><b style="font-family:Georgia,serif">Abdelazeem Mandour</b><p class="m">${t('sub')} · v3.0</p></div>`}
 async function H(p){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('am|'+p));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){let h=5381;for(const c of 'am|'+p)h=(h*33^c.charCodeAt(0))>>>0;return'x'+h}}
-async function setPw(){const s=S.settings,n=$('#pn').value;if(s.pw&&await H($('#pc').value)!==s.pw)return alert(t('ePwBad'));if(n.length<4)return alert(t('ePwLen'));if(n!==$('#pn2').value)return alert(t('ePwMis'));s.pw=await H(n);save();alert(t('pwSaved'));show()}
-async function rmPw(){if(await H($('#pc').value)!==S.settings.pw)return alert(t('ePwBad'));S.settings.pw='';S.settings.lockLeave=false;save();alert(t('pwRemoved'));show()}
-function lock(){if(!S.settings.pw)return;let L=$('#lock');if(!L){L=document.createElement('div');L.id='lock';document.body.append(L)}
- L.innerHTML=`<div class="logo big">AM</div><h1>Abdelazeem Mandour</h1><p>${t('enterPw')}</p><input type="password" id="lp" autocomplete="current-password"><div class="err" id="le"></div><button class="primary" onclick="unlock()">${t('unlock')}</button>`;L.style.display='flex';const i=$('#lp');i.onkeydown=e=>{if(e.key==='Enter')unlock()};setTimeout(()=>i.focus(),50)}
-async function unlock(){if(await H($('#lp').value)===S.settings.pw)$('#lock').style.display='none';else $('#le').textContent=t('ePwBad')}
-function dl(name,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click()}
-function exportData(){dl('accounting-backup.json',new Blob([JSON.stringify(S)],{type:'application/json'}))}
-function exportCSV(){const q=v=>'"'+String(v).replace(/"/g,'""')+'"',r=[['Date','Type','Description','Code','Account','Debit','Credit'].join(',')];sorted().forEach(e=>e.lines.forEach(l=>r.push([e.date,e.kind,q(e.desc),l.acc,q((acc(l.acc)||{name:''}).name),l.d||'',l.c||''].join(','))));dl('journal.csv',new Blob(['\ufeff'+r.join('\n')],{type:'text/csv'}))}
-function importData(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const s=JSON.parse(r.result);if(!s.accounts||!s.entries)throw 0;S=norm(s);save();apply();show()}catch(e){alert(t('badFile'))}};r.readAsText(f)}
-function resetAll(){if(confirm(t('cReset'))){const st=S.settings;localStorage.removeItem(KEY);S=norm(null);S.settings=st;save();show()}}
+async function setPw(){const n=$('#pn').value;if(ST.pw&&await H($('#pc').value)!==ST.pw)return alert(t('ePwBad'));if(n.length<4)return alert(t('ePwLen'));if(n!==$('#pn2').value)return alert(t('ePwMis'));ST.pw=await H(n);persist();alert(t('pwSaved'));show()}
+async function rmPw(){if(await H($('#pc').value)!==ST.pw)return alert(t('ePwBad'));ST.pw='';ST.lockLeave=false;persist();alert(t('pwRemoved'));show()}
+function lock(){if(!ST.pw)return;let K=$('#lock');if(!K){K=document.createElement('div');K.id='lock';document.body.append(K)}
+ K.innerHTML=`<div class="logo big">AM</div><h1>Abdelazeem Mandour</h1><p>${t('enterPw')}</p><input type="password" id="lp" autocomplete="current-password"><div class="err" id="le"></div><button class="primary" onclick="unlock()">${t('unlock')}</button>`;K.style.display='flex';const i=$('#lp');i.onkeydown=e=>{if(e.key==='Enter')unlock()};setTimeout(()=>i.focus(),50)}
+async function unlock(){if(await H($('#lp').value)===ST.pw)$('#lock').style.display='none';else $('#le').textContent=t('ePwBad')}
+function exportData(){dl('accounting-backup.json',new Blob([JSON.stringify({version:3,ledger:L.toJSON(),settings:ST})],{type:'application/json'}))}
+function importData(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);L=Ledger.fromJSON(d.ledger);if(d.settings)ST=Object.assign(ST,d.settings);noSave=false;persist();show()}catch(e){alert(t('badFile'))}};r.readAsText(f)}
+function checkInt(){const r=L.integrityReport();alert(r.ok?t('intOk'):t('intBad')+'\n'+r.problems.map(p=>p.type).join('\n'))}
+function resetAll(){if(confirm(t('cReset'))){L=fresh();noSave=false;EDIT=0;persist();show()}}
 
-const V={entries:vEntries,accounts:vAccounts,ledger:vLedger,trial:vTrial,reports:vReports,cycle:vCycle,settings:vSettings};
-apply();show();lock();
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&S.settings.lockLeave)lock()});
+const V={dash:vDash,entries:vEntries,coa:vCoa,ledger:vLedger,tb:vTb,reports:vReports,cycle:vCycle,audit:vAudit,settings:vSettings};
+init();YR=Object.keys(L.s.years).map(Number).sort().pop()||YR;show();lock();
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&ST.lockLeave)lock()});
 if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 </body>
